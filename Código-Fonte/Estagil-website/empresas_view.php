@@ -1,3 +1,4 @@
+<?php $_REQUEST['page'] = 'empresas';?>
 <?php include'header.php';?>
 <!-- banner -->
 <div class="inside-banner">
