@@ -1,9 +1,15 @@
 <?php include'header.php';?>
 
-<div class="jumbotron">
-  <h1>Bem vindo à Estágil</h1>
-  <p>Encontre sua vaga de estágio em um click. Rápido e fácil.</p>
-</div>
+<div class="bg"></div>
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-lg-8">
+
+                  <h1>Bem vindo à Estágil</h1>
+                  <p>Encontre sua vaga de estágio em um click. Rápido e fácil.</p>
+            </div>
+        </div>
+    </div>
 
 <div class="banner-search">
   <div class="container">
@@ -42,14 +48,14 @@
         </div>
         <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
           <p>Cadastre-se agora e fique sabendo sobre todas as vagas oferecidas.</p>
-          <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Entrar</button>        </div>
+          <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Crie já</button>        </div>
         </div>
       </div>
     </div>
   </div>
   <!-- banner -->
   <div class="container">
-    <div class="properties-listing spacer"> <a href="buysalerent.php" class="pull-right viewall">View All Listing</a>
+    <div class="properties-listing spacer"> <a href="buysalerent.php" class="pull-right viewall">Ver todos</a>
       <h2>Estágios mais procurados</h2>
       <div id="owl-example" class="owl-carousel">
         <div class="properties">

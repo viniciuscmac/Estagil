@@ -60,8 +60,11 @@
           <label>
             <input type="checkbox"> Mantenha-me conectado
           </label>
+
         </div>
         <button type="submit" class="btn btn-success">Entrar</button>
+
+        <br><br><a href="#">Esqueci minha senha</a>
       </form>
         </div>
         <div class="col-sm-6">
