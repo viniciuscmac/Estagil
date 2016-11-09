@@ -1,6 +1,6 @@
 <?php
 require_once('mysql_connect.php');
-print_r (listAlunos());
+//listAlunos();
 /*foreach ($alunos as $row) {
   echo 'ID: '.$row['idAlunos'].'<br><br>';
   echo 'Nome: '.$row['nomeAluno'].'<br><br>';
@@ -21,6 +21,7 @@ function listAlunos(){
    	catch (PDOException $ex) {
    		echo "FAILURE DATABASE";
    	}
+
 	return $result;
 }
 
