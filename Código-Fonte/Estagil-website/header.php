@@ -12,17 +12,6 @@
   <script src="assets/script.js"></script>
 
 
-  <script type="text/javascript">
-  $(document).ready(function(){
-    $(".nav a").on("click", function(){
-    $(".nav").find(".active").removeClass("active");
-    $(this).parent().addClass("active");
-})});
-  </script>
-
-
-
-
 
   <!-- Owl stylesheet -->
   <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
@@ -69,7 +58,7 @@
           <ul class="nav navbar-nav navbar-right" id="navbar-menu">
             <li class="active"><a href="index.php">Home</a></li>
             <li><a href="about.php">Estágios</a></li>
-            <li><a href="agents.php">Empresas</a></li>
+            <li><a href="empresas.php">Empresas</a></li>
             <li><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>
           </ul>
         </div>
@@ -77,3 +66,11 @@
       </div>
     </div>
   </div>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(".nav a").on("click", function(){
+    $(".nav").find(".active").removeClass("active");
+    $(this).parent().addClass("active");
+})});
+  </script>
