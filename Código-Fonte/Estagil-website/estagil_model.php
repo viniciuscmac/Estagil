@@ -1,17 +1,10 @@
 <?php
 require_once('mysql_connect.php');
-
+//novaEmpresa("UFSC","48-35556777","Universidade","Trindade, Floripa, SC","ufsc@ufsc.com","ufsc123");
+//$teste = checkEmpresa("ufsc@ufsc.com","ufsc123");
+//echo $teste;
 //print_r (listEmpresas());
-novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
-/*foreach ($alunos as $row) {
-  echo 'ID: '.$row['idAlunos'].'<br><br>';
-  echo 'Nome: '.$row['nomeAluno'].'<br><br>';
-  echo 'Telefone: '.$row['foneAluno'].'<br><br>';
-  echo 'Curso: '.$row['cursoAluno'].'<br><br>';
-  echo 'Semestre: '.$row['semestreAluno'].'<br><br>';
-  echo 'Endereço: '.$row['enderecoAluno'].'<br><br>';
-  echo 'Idade: '.$row['idadeAluno'].'<br><br>';
-}*/
+//novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
 
 function listEmpresas(){
 	global $conn;
@@ -51,7 +44,6 @@ function novoAluno($nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAlu
 		$conn->beginTransaction();
 
    		$stmt = $conn->prepare("INSERT INTO `Estagil`.`Alunos` (`idAlunos`, `nomeAluno`, `foneAluno`, `cursoAluno`, `semestreAluno`, `enderecoAluno`, `idadeAluno`) VALUES (NULL, ?, ?, ?, ?, ?, ?)");
-			INSERT INTO `Alunos`(`idAlunos`, `nomeAluno`, `foneAluno`, `cursoAluno`, `semestreAluno`, `enderecoAluno`, `idadeAluno`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7])
 			$stmt->execute(array($nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$idadeAluno));
 		$conn->commit();
 
@@ -85,5 +77,166 @@ function getIdAluno($nomeAluno){
 	return $id;
 }
 
+function novaEmpresa($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$email,$password){
+	global $conn;
+   try {
+		$conn->beginTransaction();
 
+   		$stmt = $conn->prepare("INSERT INTO `Estagil`.`Empresas` (`idEmpresas`, `nomeEmpresa`, `foneEmpresa`, `areaEmpresa`, `enderecoEmpresa`) VALUES (NULL, ?, ?, ?, ?)");
+			$stmt->execute(array($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa));
+		$conn->commit();
+
+		$conn->beginTransaction();
+		$idtemp = getIdEmpresa($nomeEmpresa);
+		$stmt = $conn->prepare("INSERT INTO `Estagil`.`acessoEmpresa` (`Empresas_idEmpresas`, `emailEmpresa`, `password`) VALUES (?, ?, ?)");
+   		$stmt->execute(array($idtemp,$email,$password));
+		$conn->commit();
+
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+}
+
+function getIdEmpresa($nomeEmpresa){
+	 global $conn;
+
+   try {
+   		$stmt = $conn->query("SELECT `idEmpresas` FROM `Empresas` WHERE `nomeEmpresa`='".$nomeEmpresa."'");
+   		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+	foreach($result as $row){
+	$id = $row['idEmpresas'];
+	}
+
+	return $id;
+}
+
+function checkAluno($username,$password){
+   global $conn;
+   try {
+
+   		$stmt = $conn->query("SELECT `Alunos_idAlunos`, `password` FROM `acessoAlunos` WHERE `emailAluno`='".$username."'");
+   		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	foreach ($result as $row){
+		if($row['password']==$password){
+		return $row['Alunos_idAlunos'];
+		}
+		else{
+		return 0;
+		}
+	}
+}
+
+function checkEmpresa($username,$password){
+   global $conn;
+   try {
+
+   		$stmt = $conn->query("SELECT `Empresas_idEmpresas`, `password` FROM `acessoEmpresa` WHERE `emailEmpresa`='".$username."'");
+   		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	foreach ($result as $row){
+		if($row['password']==$password){
+		return $row['Empresas_idEmpresas'];
+		}
+		else{
+		return 0;
+		}
+	}
+}
+
+function listVagas(){
+	global $conn;
+
+   try {
+
+  	$stmt = $conn->query("SELECT `idVaga`,`descricaoVaga` FROM `Vagas`");
+   	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	return $result;
+}
+
+function listDetalhesVaga($idVaga){
+	global $conn;
+
+   try {
+
+  	$stmt = $conn->query("SELECT * FROM `Vagas` WHERE `idVaga`='".$idVaga."'");
+   	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	return $result;
+
+}
+
+function listVagasArea($areaVaga){
+	global $conn;
+
+   try {
+
+  	$stmt = $conn->query("SELECT * FROM `Vagas` WHERE `areaVaga`='".$areaVaga."'");
+   	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	return $result;
+
+}
+function inscricaoVaga($idAluno,$idVaga,$dataVaga){
+	global $conn;
+
+   try {
+
+  	$stmt = $conn->query("INSERT INTO `Estagil`.`Inscricoes`(`Alunos_idAlunos`, `Vagas_idVaga`, `dataVaga`) VALUES ($idAluno,$idVaga,$dataVaga)");
+   	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	return $result;
+
+}
+function listVagasInscritas($idAlunos){
+	global $conn;
+
+   try {
+
+  	$stmt = $conn->query("SELECT `Vagas_idVaga`, `dataVaga` FROM `Inscricoes` WHERE Alunos_idAlunos='".$idAlunos."'");
+   	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	return $result;
+
+}
 ?>
