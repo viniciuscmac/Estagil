@@ -1,0 +1,14 @@
+{
+  "name": "Estagil-website",
+  "authors": [
+    "moiseshilario <moiseshilariu@hotmail.com>"
+  ],
+  "description": "Projeto de Metodos e Ferramentas de Software",
+  "main": "index.php",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

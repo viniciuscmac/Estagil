@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  
+
   <title>Estagil </title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -12,6 +12,7 @@
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.js"></script>
   <script src="assets/script.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
 
 
 
