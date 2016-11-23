@@ -1,5 +1,6 @@
 <?php
 require_once('mysql_connect.php');
+print_r(infoEmpresa(2));
 //novaEmpresa("UFSC","48-35556777","Universidade","Trindade, Floripa, SC","ufsc@ufsc.com","ufsc123");
 //$teste = checkEmpresa("ufsc@ufsc.com","ufsc123");
 //echo $teste;
@@ -207,6 +208,7 @@ function listVagasArea($areaVaga){
 	return $result;
 
 }
+
 function inscricaoVaga($idAluno,$idVaga,$dataVaga){
 	global $conn;
 
@@ -238,5 +240,121 @@ function listVagasInscritas($idAlunos){
 
 	return $result;
 
+}
+
+function deleteAluno($id){
+	global $conn;
+
+ 	try {
+
+	$stmt = $conn->query("DELETE FROM `Estagil`.`Alunos` WHERE `idAlunos` = ".$id."");
+	//$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	}
+	catch (PDOException $ex) {
+		echo "FAILURE DATABASE";
+	}
+
+//return $result;
+}
+
+function deleteEmpresa($id){
+	global $conn;
+
+ 	try {
+
+	$stmt = $conn->query("DELETE FROM `Estagil`.`Empresas` WHERE `idEmpresas` = ".$id."");
+	//$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	}
+	catch (PDOException $ex) {
+		echo "FAILURE DATABASE";
+	}
+
+//return $result;
+}
+
+function listVagasSalario(){
+	global $conn;
+
+   try {
+
+  	$stmt = $conn->query("SELECT * FROM `Vagas` ORDER BY `salarioVaga`");
+   	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	return $result;
+
+}
+
+function infoAluno($idAluno){
+	global $conn;
+
+   try {
+
+  	$stmt = $conn->query("SELECT * FROM `Alunos`, `acessoAlunos` WHERE Alunos.idAlunos = ".$idAluno." AND acessoAlunos.Alunos_idAlunos = ".$idAluno."");
+   	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	return $result;
+}
+
+function infoEmpresa($idEmpresa){
+	global $conn;
+
+   try {
+
+  	$stmt = $conn->query("SELECT * FROM `Empresas`, `acessoEmpresa` WHERE Empresas.idEmpresas = ".$idEmpresa." AND acessoEmpresa.Empresas_idEmpresas = ".$idEmpresa."");
+   	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	return $result;
+}
+
+function updateInfoAluno($idAluno,$nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$idadeAluno,$email,$password){
+	global $conn;
+   try {
+		$conn->beginTransaction();
+
+   		$stmt = $conn->prepare("UPDATE `Estagil`.`Alunos`  SET `nomeAluno` = ?, `foneAluno` = ?, `cursoAluno` = ?,  `semestreAluno` = ?, `enderecoAluno` = ?,  `idadeAluno` = ? WHERE `Alunos`.`idAlunos` = ?");
+   		$stmt->execute(array($nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$idadeAluno,$idAluno));
+
+		$stmt = $conn->prepare("UPDATE `Estagil`.`acessoAlunos` SET `emailAluno` = ?, `password` = ? WHERE `acessoAlunos`.`Alunos_idAlunos` = ?");
+   		$stmt->execute(array($email,$password,$idAluno));
+		$conn->commit();
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+}
+
+function updateInfoEmpresa($idEmpresa,$nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$email,$password){
+	global $conn;
+   try {
+		$conn->beginTransaction();
+
+
+   		$stmt = $conn->prepare("UPDATE `Estagil`.`Empresas`  SET `nomeEmpresa` = ?, `foneEmpresa` = ?, `areaEmpresa` = ?, `enderecoEmpresa` = ? WHERE `Empresas`.`idEmpresas` = ?");
+   		$stmt->execute(array($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$idEmpresa));
+
+		$stmt = $conn->prepare("UPDATE `Estagil`.`acessoEmpresa` SET `emailEmpresa` = ?, `password` = ? WHERE `acessoEmpresa`.`Empresas_idEmpresas` = ?");
+   		$stmt->execute(array($email,$password,$idEmpresa));
+		$conn->commit();
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
 }
 ?>
