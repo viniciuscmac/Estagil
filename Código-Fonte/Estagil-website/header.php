@@ -53,7 +53,7 @@
           <ul class="nav navbar-nav navbar-right" id="navbar-menu">
             <li <?php  echo ($_REQUEST['page'] == 'home') ? 'class="active"' : ''; ?>><a href="index.php">Home</a></li>
             <li <?php  echo ($_REQUEST['page'] == 'estagios') ? 'class="active"' : ''; ?>><a href="estagios_view.php">Estágios</a></li>
-            <li <?php  echo ($_REQUEST['page'] == 'empresas') ? 'class="active"' : ''; ?>><a href="empresas_view.php">Empresas</a></li>
+            <li <?php  echo ($_REQUEST['page'] == 'empresas') ? 'class="active"' : ''; ?>><a href="empresas.php">Empresas</a></li>
             <li <?php  echo ($_REQUEST['page'] == 'entrar') ? 'class="active"' : ''; ?>><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>
           </ul>
         </div>

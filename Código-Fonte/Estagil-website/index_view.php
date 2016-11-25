@@ -139,8 +139,6 @@
           <script type="text/javascript">
           // using JSON.parse on the output of json_encode
           var array = JSON.parse( '<?php echo json_encode($alunos); ?>' );
-
-
           //document.getElementById('demo').innerHTML = array[0].enderecoAluno;
           </script>
 
