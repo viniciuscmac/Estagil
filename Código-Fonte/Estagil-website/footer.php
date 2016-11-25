@@ -64,8 +64,14 @@
             <div class="col-sm-6">
               <h4>Não tem uma conta?</h4>
               <p>Cadastre-se hoje e fique sabendo em primeira mão das vagas ofertadas!</p>
-              <button type="submit" class="btn btn-info"  onclick="window.location.href='register.php'">Criar conta</button>
+              <button type="submit" class="btn btn-info"  onclick="window.location.href='register.php'">Criar conta</button><br><br>
+
+              <h4>É uma empresa?</h4>
+              <p>Cadastre-a hoje e ofereça vagas de estágios!</p>
+              <button type="submit" class="btn btn-info btn-empresa"  onclick="window.location.href='empresa_register.php'">Criar conta de Empresa</button>
             </div>
+
+
 
           </div>
         </div>

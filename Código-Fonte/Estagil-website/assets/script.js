@@ -15,15 +15,8 @@ $(function() {
       var Page = (function() {
 
 
-        var $nav = $( '#nav-dots > span' ),
-          slitslider = $( '#slider' ).slitslider( {
-            onBeforeChange : function( slide, pos ) {
+        var $nav = $( '#nav-dots > span' )
 
-              $nav.removeClass( 'nav-dot-current' );
-              $nav.eq( pos ).addClass( 'nav-dot-current' );
-
-            }
-          } ),
 
           init = function() {
 
