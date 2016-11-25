@@ -2,9 +2,9 @@
  * Created by Hilario on 11/16/16.
  */
 
-var app = angular.module("empresasApp", []).controller("empresaCtrl" , function ($scope) {
-    $scope.empresas = [
-        google = {
+var app = angular.module("empresasApp", []).controller("empresaCtrl" , function ($scope, $window) {
+    $scope.empresas = $window.empresas;
+        /*google = {
             nome : "Google",
             descricao: "Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.",
             email: "google@gmail.com",
@@ -43,5 +43,5 @@ var app = angular.module("empresasApp", []).controller("empresaCtrl" , function 
             telefone: "(9009) 899 889",
             logo: "ufglogo.jpg"
     }
-    ]
+  ]*/
 });

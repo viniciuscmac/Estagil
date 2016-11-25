@@ -58,12 +58,13 @@
     </div>
   </div>
   <!-- banner -->
+
   <div class="container">
     <div class="properties-listing spacer"> <a href="buysalerent.php" class="pull-right viewall">Ver todos</a>
       <h2>Estágios mais procurados</h2>
       <div id="owl-example" class="owl-carousel">
         <div class="properties">
-          <div class="image-holder"><img src="images/empresas/googleLogo.png" class="img-responsive" alt="properties"/>
+          <div class="image-holder"><img src="images/empresas/googlelogo.png" class="img-responsive" alt="properties"/>
 
           </div>
           <h4><a href="property-detail.php">Desenvolvedor java</a></h4>
@@ -74,7 +75,7 @@
         </div>
 
         <div class="properties">
-          <div class="image-holder"><img src="images/empresas/microsoftLogo.jpg" class="img-responsive" alt="properties"/>
+          <div class="image-holder"><img src="images/empresas/microsoftlogo.jpg" class="img-responsive" alt="properties"/>
 
           </div>
           <h4><a href="property-detail.php">Desenvolvedor php</a></h4>
@@ -85,7 +86,7 @@
         </div>
 
         <div class="properties">
-          <div class="image-holder"><img src="images/empresas/ufgLogo.jpg" class="img-responsive" alt="properties"/>
+          <div class="image-holder"><img src="images/empresas/ufglogo.jpg" class="img-responsive" alt="properties"/>
 
           </div>
           <h4><a href="property-detail.php">Desenvolvedor javascript</a></h4>
@@ -127,8 +128,6 @@
 
           <a class="btn btn-primary" href="property-detail.php">Ver detalhes</a>
         </div>
-
-
 
       </div>
     </div>

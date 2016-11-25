@@ -1,6 +1,6 @@
 <?php
 require_once('mysql_connect.php');
-print_r(infoEmpresa(2));
+//print_r(infoEmpresa(2));
 //novaEmpresa("UFSC","48-35556777","Universidade","Trindade, Floripa, SC","ufsc@ufsc.com","ufsc123");
 //$teste = checkEmpresa("ufsc@ufsc.com","ufsc123");
 //echo $teste;

@@ -12,7 +12,7 @@
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.js"></script>
   <script src="assets/script.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
 
 
 
@@ -22,14 +22,6 @@
   <script src="assets/owl-carousel/owl.carousel.js"></script>
   <!-- Owl stylesheet -->
 
-
-  <!-- slitslider -->
-  <link rel="stylesheet" type="text/css" href="assets/slitslider/css/style.css" />
-  <link rel="stylesheet" type="text/css" href="assets/slitslider/css/custom.css" />
-  <script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
-  <script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
-  <script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
-  <!-- slitslider -->
 
 </head>
 
