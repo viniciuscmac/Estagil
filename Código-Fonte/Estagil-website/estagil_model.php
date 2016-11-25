@@ -1,6 +1,5 @@
 <?php
 require_once('mysql_connect.php');
-//print_r(infoEmpresa(2));
 //novaEmpresa("UFSC","48-35556777","Universidade","Trindade, Floripa, SC","ufsc@ufsc.com","ufsc123");
 //$teste = checkEmpresa("ufsc@ufsc.com","ufsc123");
 //echo $teste;
@@ -12,7 +11,9 @@ function listEmpresas(){
 
    try {
 
-   		$stmt = $conn->query("SELECT * FROM Empresas");
+   		$stmt = $conn->query("SELECT Empresas.*, acessoEmpresa.emailEmpresa FROM Empresas
+INNER JOIN acessoEmpresa
+ON Empresas.idEmpresas=acessoEmpresa.Empresas_idEmpresas");
    		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
    	}
    	catch (PDOException $ex) {
@@ -164,7 +165,7 @@ function listVagas(){
 
    try {
 
-  	$stmt = $conn->query("SELECT `idVaga`,`descricaoVaga` FROM `Vagas`");
+  	$stmt = $conn->query("SELECT `nomeEmpresa`, `salarioVaga`, `tituloVaga`,`idVaga`,`descricaoVaga` FROM `Vagas`");
    	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
    	}
