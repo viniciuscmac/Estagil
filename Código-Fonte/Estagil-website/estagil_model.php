@@ -57,7 +57,7 @@ function novoAluno($nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAlu
 
    	}
    	catch (PDOException $ex) {
-   		echo "FAILURE DATABASE";
+   		echo $ex;
    	}
 
 }
@@ -79,13 +79,13 @@ function getIdAluno($nomeAluno){
 	return $id;
 }
 
-function novaEmpresa($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$email,$password){
+function novaEmpresa($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$descricaoEmpresa,$email,$password){
 	global $conn;
    try {
 		$conn->beginTransaction();
 
-   		$stmt = $conn->prepare("INSERT INTO `Estagil`.`Empresas` (`idEmpresas`, `nomeEmpresa`, `foneEmpresa`, `areaEmpresa`, `enderecoEmpresa`) VALUES (NULL, ?, ?, ?, ?)");
-			$stmt->execute(array($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa));
+   		$stmt = $conn->prepare("INSERT INTO `Estagil`.`Empresas` (`idEmpresas`, `nomeEmpresa`, `foneEmpresa`, `areaEmpresa`, `enderecoEmpresa`, `descricaoEmpresa`) VALUES (NULL, ?, ?, ?, ?, ?)");
+			$stmt->execute(array($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$descricaoEmpresa));
 		$conn->commit();
 
 		$conn->beginTransaction();
@@ -96,7 +96,7 @@ function novaEmpresa($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$em
 
    	}
    	catch (PDOException $ex) {
-   		echo "FAILURE DATABASE";
+   		echo $ex;
    	}
 
 }
