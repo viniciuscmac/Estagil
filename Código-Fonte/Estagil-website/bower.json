@@ -9,6 +9,7 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "angular": "^1.5.8"
+    "angular": "^1.5.8",
+    "angular-cookies": "^1.5.9"
   }
 }

@@ -13,7 +13,8 @@
   <script src="assets/bootstrap/js/bootstrap.js"></script>
   <script src="assets/script.js"></script>
   <script src="bower_components/angular/angular.js"></script>
-
+  <script src="bower_components/angular-cookies/angular-cookies.js">  </script>
+  <script src="assets/app/my-app.js"> </script>
 
 
   <!-- Owl stylesheet -->
@@ -25,7 +26,7 @@
 
 </head>
 
-<body>
+<body ng-app="EstagilApp" ng-controller="HeaderController">
 
 
   <!-- Header Starts -->
@@ -55,6 +56,8 @@
             <li <?php  echo ($_REQUEST['page'] == 'estagios') ? 'class="active"' : ''; ?>><a href="estagios_view.php">Estágios</a></li>
             <li <?php  echo ($_REQUEST['page'] == 'empresas') ? 'class="active"' : ''; ?>><a href="empresas.php">Empresas</a></li>
             <li <?php  echo ($_REQUEST['page'] == 'entrar') ? 'class="active"' : ''; ?>><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>
+            <li <?php  echo ($_REQUEST['page'] == 'empresas') ? 'class="active"' : ''; ?>><a href="empresas.php" ng-class="{hidden: !empresaLogada}">Cadastrar Vaga {{empresaLogada}}</a></li>
+
           </ul>
         </div>
         <!-- #Nav Ends -->
