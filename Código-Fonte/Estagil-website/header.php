@@ -36,7 +36,7 @@
       <div class="container">
         <div class="navbar-header">
 
-        <a class="navbar-brand" href="index.php">Estágil</a>
+          <a class="navbar-brand" href="index.php">Estágil</a>
 
 
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
@@ -50,25 +50,19 @@
 
 
         <!-- Nav Starts -->
-        <div class="navbar-collapse  collapse">
+        <div class="navbar-collapse  collapse" ng-controller="navbarCtrl">
           <ul class="nav navbar-nav navbar-right" id="navbar-menu">
-            <li <?php  echo ($_REQUEST['page'] == 'home') ? 'class="active"' : ''; ?>><a href="index.php">Home</a></li>
-            <li <?php  echo ($_REQUEST['page'] == 'estagios') ? 'class="active"' : ''; ?>><a href="estagios_view.php">Estágios</a></li>
-            <li <?php  echo ($_REQUEST['page'] == 'empresas') ? 'class="active"' : ''; ?>><a href="empresas.php">Empresas</a></li>
-            <li <?php  echo ($_REQUEST['page'] == 'entrar') ? 'class="active"' : ''; ?>><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>
-            <li <?php  echo ($_REQUEST['page'] == 'empresas') ? 'class="active"' : ''; ?>><a href="empresas.php" ng-class="{hidden: !empresaLogada}">Cadastrar Vaga {{empresaLogada}}</a></li>
-
+            <li ng-class="{ active: isActive('/index.php')}"><a href="index.php">Home</a></li>
+            <li ng-class="{ active: isActive('/estagios.php')}"><a href="estagios.php">Estágios</a></li>
+            <li ng-class="{ active: isActive('/empresas.php')}"><a href="empresas.php">Empresas</a></li>
+            <li ng-class="{ active: isActive('/register.php')}"><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>
+            <li ><a href="empresas.php" ng-class="{hidden: !empresaLogada}">Cadastrar Vaga {{empresaLogada}}</a></li>
           </ul>
         </div>
-        <!-- #Nav Ends -->
+        <!-- Nav Ends -->
+
+
+
       </div>
     </div>
   </div>
-
-  <script type="text/javascript">
-  $(document).ready(function(){
-    $(".nav a").on("click", function(){
-    $(".nav").find(".active").removeClass("active");
-    $(this).parent().addClass("active");
-})});
-  </script>

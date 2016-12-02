@@ -1,4 +1,3 @@
-<?php $_REQUEST['page'] = 'empresas';?>
 <?php include'header.php';?>
 
 

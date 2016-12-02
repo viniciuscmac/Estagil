@@ -1,4 +1,3 @@
-<?php $_REQUEST['page'] = 'entrar';?>
 <?php include'header.php';?>
 <!-- banner -->
 <div class="inside-banner">
@@ -20,7 +19,7 @@
           <input type="text" class="form-control" placeholder="Telefone" name="form_telefone_empresa" required>
           <input type="text" class="form-control" placeholder="Área da Empresa" name="form_area_empresa" required>
           <input type="textarea" class="form-control" rows="15" placeholder="Forneça uma descrição de sua empresa" name="form_descricao_empresa"></textarea>
-          
+
           <input type="textarea" rows="2" class="form-control" placeholder="Endereço" name="form_endereco_empresa" required></textarea>
           <input type="password" class="form-control" placeholder="Senha" name="form_senha_empresa" required>
           <input type="password" class="form-control" placeholder="Confirme sua senha" name="form_confirme_empresa" required>

@@ -1,4 +1,3 @@
-<?php $_REQUEST['page'] = 'entrar';?>
 <?php include'header.php';?>
 <!-- banner -->
 <div class="inside-banner">

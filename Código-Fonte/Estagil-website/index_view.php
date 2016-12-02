@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<?php $_REQUEST['page'] = 'home';?>
 <?php include'header.php';?>
 
 <div class="bg"></div>
