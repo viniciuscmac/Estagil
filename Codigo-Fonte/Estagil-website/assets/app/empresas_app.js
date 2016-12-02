@@ -2,7 +2,7 @@
  * Created by Hilario on 11/16/16.
  */
 
-var app = angular.module("empresasApp", []).controller("empresaCtrl" , function ($scope, $window) {
+var app = angular.module("EstagilApp").controller("empresaCtrl" , function ($scope, $window) {
     $scope.empresas = $window.empresas;
         /*google = {
             nome : "Google",

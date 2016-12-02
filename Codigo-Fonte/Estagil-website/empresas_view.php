@@ -9,7 +9,7 @@
 empresas = JSON.parse( '<?php echo json_encode($empresas); ?>' );
 </script>
 
-<div ng-app="empresasApp"  ng-controller="empresaCtrl">
+<div ng-controller="empresaCtrl">
 
 
   <div class="inside-banner" >

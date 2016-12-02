@@ -8,7 +8,7 @@
 estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
 </script>
 
-<div ng-app="estagiosApp"  ng-controller="estagiosCtrl">
+<div ng-controller="estagiosCtrl">
 
 
 <div class="inside-banner">
