@@ -15,17 +15,29 @@
       <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
 
         <form class="" action="" method="post">
-          <input type="text" class="form-control" placeholder="Nome da Empresa" name="form_nome_empresa" required>
-          <input type="email" class="form-control" placeholder="Email" name="form_email_empresa" required>
-          <input type="text" class="form-control" placeholder="Telefone" name="form_telefone_empresa" required>
-          <input type="text" class="form-control" placeholder="Área da Empresa" name="form_area_empresa" required>
-          <input type="textarea" class="form-control" rows="15" placeholder="Forneça uma descrição de sua empresa" name="form_descricao_empresa"></textarea>
+          <input type="text" class="form-control"  name="form_nome_empresa" 
+            ng-model="empresaLogada" disabled required>
+          <input type="date" class="form-control" placeholder="Date" name="form_inicio_vaga">
+          <input type="text" class="form-control" placeholder="Forneça o título da vaga" name="form_titulo_vaga" required>
+          <input type="text" class="form-control" placeholder="Forneça a área de atuação da vaga" name="form_area_vaga" required>
+          <input type="textarea" class="form-control" rows="15" placeholder="Forneça uma descrição da vaga" name="form_descricao_vaga" required></textarea>
           
-          <input type="textarea" rows="2" class="form-control" placeholder="Endereço" name="form_endereco_empresa" required></textarea>
-          <input type="password" class="form-control" placeholder="Senha" name="form_senha_empresa" required>
-          <input type="password" class="form-control" placeholder="Confirme sua senha" name="form_confirme_empresa" required>
+          <input type="number" class="form-control" placeholder="Salário" name="form_salario_vaga" required></textarea>
+          <select name="form_transporte_vaga" class="form-control" required>
+            <option value="1" disabled selected>Auxílio Transporte</option>
+            <option value="1">Sim</option>
+            <option value="0">Não</option>
+          </select>
 
-          <button type="submit" class="btn btn-success" name="Sign">Criar conta</button>
+          <select name="form_extra_vaga" class="form-control" required>
+            <option disabled selected>Auxílio Extra</option>
+            <option>Sim</option>
+            <option>Não</option>
+          </select>
+          
+          <input type="textArea" rows="5" class="form-control" placeholder="Descreva os requisitos da vaga" name="form_requisitos_vaga" required>
+
+          <button type="submit" class="btn btn-success" name="Sign">Abrir Vaga</button>
         </form>
 
 
