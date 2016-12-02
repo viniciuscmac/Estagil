@@ -94,6 +94,8 @@ function novaEmpresa($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$de
    		$stmt->execute(array($idtemp,$email,$password));
 		$conn->commit();
 
+		setcookie("empresaLogada", $nomeEmpresa);
+
    	}
    	catch (PDOException $ex) {
    		echo $ex;
