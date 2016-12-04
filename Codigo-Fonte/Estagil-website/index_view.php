@@ -66,66 +66,66 @@
           <div class="image-holder"><img src="images/empresas/googlelogo.png" class="img-responsive" alt="properties"/>
 
           </div>
-          <h4><a href="property-detail.php">Desenvolvedor java</a></h4>
+          <h4><a href="detalhe_vaga.php">Desenvolvedor java</a></h4>
           <p class="empresa">Empresa 1</p>
           <p class="price">Vagas: 5</p>
 
-          <a class="btn btn-primary" href="property-detail.php">Ver detalhes</a>
+          <a class="btn btn-primary" href="detalhe_vaga.php">Ver detalhes</a>
         </div>
 
         <div class="properties">
           <div class="image-holder"><img src="images/empresas/microsoftlogo.jpg" class="img-responsive" alt="properties"/>
 
           </div>
-          <h4><a href="property-detail.php">Desenvolvedor php</a></h4>
+          <h4><a href="detalhe_vaga.php">Desenvolvedor php</a></h4>
           <p class="empresa">Empresa 1</p>
           <p class="price">Vagas: 5</p>
 
-          <a class="btn btn-primary" href="property-detail.php">Ver detalhes</a>
+          <a class="btn btn-primary" href="detalhe_vaga.php">Ver detalhes</a>
         </div>
 
         <div class="properties">
           <div class="image-holder"><img src="images/empresas/ufglogo.jpg" class="img-responsive" alt="properties"/>
 
           </div>
-          <h4><a href="property-detail.php">Desenvolvedor javascript</a></h4>
+          <h4><a href="detalhe_vaga.php">Desenvolvedor javascript</a></h4>
           <p class="empresa">Empresa 2</p>
           <p class="price">Vagas: 10</p>
 
-          <a class="btn btn-primary" href="property-detail.php">Ver detalhes</a>
+          <a class="btn btn-primary" href="detalhe_vaga.php">Ver detalhes</a>
         </div>
 
         <div class="properties">
           <div class="image-holder"><img src="images/empresas/inflogo.jpg" class="img-responsive" alt="properties"/>
 
           </div>
-          <h4><a href="property-detail.php">Suporte</a></h4>
+          <h4><a href="detalhe_vaga.php">Suporte</a></h4>
           <p class="empresa">Empresa 3</p>
           <p class="price">Vagas: 3</p>
 
-          <a class="btn btn-primary" href="property-detail.php">Ver detalhes</a>
+          <a class="btn btn-primary" href="detalhe_vaga.php">Ver detalhes</a>
         </div>
 
         <div class="properties">
           <div class="image-holder"><img src="images/empresas/ibmlogo.jpg" class="img-responsive" alt="properties"/>
 
           </div>
-          <h4><a href="property-detail.php">Analista</a></h4>
+          <h4><a href="detalhe_vaga.php">Analista</a></h4>
           <p class="empresa">Empresa 1</p>
           <p class="price">Vagas: 2</p>
 
-          <a class="btn btn-primary" href="property-detail.php">Ver detalhes</a>
+          <a class="btn btn-primary" href="detalhe_vaga.php">Ver detalhes</a>
         </div>
 
         <div class="properties">
           <div class="image-holder"><img src="images/empresas/briefcase.png" class="img-responsive" alt="properties"/>
 
           </div>
-          <h4><a href="property-detail.php">Desenvolvedor php</a></h4>
+          <h4><a href="detalhe_vaga.php">Desenvolvedor php</a></h4>
           <p class="empresa">Empresa x</p>
           <p class="price">Vagas: 10</p>
 
-          <a class="btn btn-primary" href="property-detail.php">Ver detalhes</a>
+          <a class="btn btn-primary" href="detalhe_vaga.php">Ver detalhes</a>
         </div>
 
       </div>
