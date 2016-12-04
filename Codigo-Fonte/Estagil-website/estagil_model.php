@@ -120,6 +120,35 @@ function getIdEmpresa($nomeEmpresa){
 	return $id;
 }
 
+function novaVaga($idEmpresa,$areaVaga,$dataInicio,$descricaoVaga,$salarioVaga,$auxTransporte,$auxExtra,$requisitosVaga,$tituloVaga){
+	global $conn;
+   try {
+		$conn->beginTransaction();
+
+   		$stmt = $conn->prepare("INSERT INTO `Estagil`.`Vagas` (`Empresas_idEmpresas`, `idVaga`, `areaVaga`, `dataInicio`, `descricaoVaga`, `salarioVaga`, `auxilioTransporte`, `auxilioExtra`, `requisitosVaga`, `tituloVaga`) VALUES (?, NULL, ?, ?, ?, ?, ?, ?, ?, ?)");
+			$stmt->execute(array($idEmpresa,$areaVaga,$dataInicio,$descricaoVaga,$salarioVaga,$auxTransporte,$auxExtra,$requisitosVaga,$tituloVaga));
+		$conn->commit();
+   	}
+   	catch (PDOException $ex) {
+   		echo $ex;
+   	}
+
+}
+
+function getEmpresaDetalhes($idEmpresa){
+	 global $conn;
+
+   try {
+   		$stmt = $conn->query("SELECT * FROM `Empresas` WHERE `idEmpresas`='".$idEmpresa."'");
+   		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+   	}
+   	catch (PDOException $ex) {
+   		echo "FAILURE DATABASE";
+   	}
+
+	return $result;
+}
+
 function checkAluno($username,$password){
    global $conn;
    try {
