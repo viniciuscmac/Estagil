@@ -196,7 +196,7 @@ function listVagas(){
 
    try {
 
-  	$stmt = $conn->query("SELECT `nomeEmpresa`, `salarioVaga`, `tituloVaga`,`idVaga`,`descricaoVaga` FROM `Vagas`");
+  	$stmt = $conn->query("SELECT `Empresas_idEmpresas`, `salarioVaga`, `tituloVaga`,`idVaga`,`descricaoVaga` FROM `Vagas`");
    	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
    	}
