@@ -43,7 +43,7 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
             <span>Requisitos: {{estagio.requisitosVaga}}</span><br>
             -->
           </div>
-          <button type="button" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default" id="detalhe-btn">
+          <button type="button" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default" id="detalhe-btn" ng-click="getId(estagio.idVaga)">
             Detalhes
           </button>
           <button type="button" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn">
