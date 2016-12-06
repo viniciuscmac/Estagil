@@ -127,12 +127,12 @@ table{background-color: #fff;}
 
 .sortby .result{margin-top: 10px;}
 
-.property-info{margin:0 0 30px 0;}
-.property-info span{margin-right: 5px;}
-.property-info p{margin-bottom:10px; }
-.property-info p.price{font-size: 28px;color: #72b70f;padding:0;border-radius: 5px;}
-.property-info .profile{margin-top: 30px;}
-.property-info .profile p{padding-left: 20px; color: #999;}
+.detalhe-vaga {margin:0 0 30px 0;}
+.detalhe-vaga span{margin-right: 5px;}
+.detalhe-vaga p{margin-bottom:10px; }
+.detalhe-vaga p.price{font-size: 20px;color: #72b70f;padding:0;border-radius: 5px;}
+.detalhe-vaga .profile{margin-top: 30px;}
+.detalhe-vaga .profile p{padding-left: 20px; color: #999;}
 
 .enquiry input,.enquiry textarea{margin-bottom: 10px;}
 .enquiry button{border-radius: 5px;}
