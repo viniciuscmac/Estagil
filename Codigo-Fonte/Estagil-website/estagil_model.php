@@ -196,12 +196,12 @@ function listVagas(){
 
    try {
 
-  	$stmt = $conn->query("SELECT `Empresas_idEmpresas`, `salarioVaga`, `tituloVaga`,`idVaga`,`descricaoVaga` FROM `Vagas`");
+  	$stmt = $conn->query("SELECT `nomeEmpresa`, `salarioVaga`, `tituloVaga`,`idVaga`,`descricaoVaga` FROM `Vagas`, `Empresas` WHERE `idEmpresas` = `Empresas_idEmpresas`");
    	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
    	}
    	catch (PDOException $ex) {
-   		echo "FAILURE DATABASE";
+   		echo $ex;
    	}
 
 	return $result;
