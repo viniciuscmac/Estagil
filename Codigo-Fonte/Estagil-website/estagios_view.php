@@ -10,52 +10,6 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
 <div ng-controller="estagiosCtrl">
 
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <h4 class="modal-title" id="myModalLabel">Desenvolvedor <!-- {{detalhes.tituloVaga}} --></h4>
-        </div>
-
-        <div class="modal-body">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-lg-12 col-sm-8">
-                <h2></h2>
-                <h4>Descrição da vaga</h4>
-                <p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions. <!--{{estagio.descricaoVaga}}--></p>
-                <h4>Empresa</h4>
-                <p>Google <!--{{estagio.nomeEmpresa}}--></p>
-                <h4>Requisitos</h4>
-                <p>Conhecimento intermediario em Java, nível de inglês intermediario. <!--{{estagio.requisitosVaga}}--></p>
-                <h4>Data de início</h4>
-                <p>20/03/2017 <!--{{estagio.dataInicio}}--></p>
-                <h4>Auxílio Transporte</h4>
-                <p>Sim <!--{{estagio.auxilioTransporte}}--></p>
-                <h4>Auxílio Extra</h4>
-                <p>Não <!--{{estagio.auxilioExtra}}--></p>
-                <h4>Local </h4>
-                <p> 344 Villa, Syndey, Australia <!--{{estagio.enderecoEmpresa}}--></p>
-                <div class="detalhe-vaga">
-                  <h4>Salário</h4>
-                  <p class="price"> R$ 1200,00<!--{{estagio.salarioVaga}}--></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Fim do modal -->
 
   <div class="inside-banner">
     <div class="container">
@@ -89,12 +43,17 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
               <span>Requisitos: {{estagio.requisitosVaga}}</span><br>
             -->
           </div>
-          <button type="button" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default" id="detalhe-btn" data-toggle="modal" data-target="#myModal" ng-click="getId(estagio.idVaga)">
-            Detalhes
-          </button>
-          <button type="button" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn">
+          <form class="" action="" method="post">
+            <input ng-show="false" type="text" name="id-detalhe" value="{{estagio.idVaga}}"/>
+            <button type="submit" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default" id="detalhe-btn" data-toggle="modal" data-target="#myModal" name="id-detalhe-btn">
+              Detalhes
+            </button>
+          </form>
+          <button type="submit" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn">
             Inscrever
           </button>
+
+
 
 
           <div class="clearfix"></div>
@@ -109,6 +68,58 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
 
 
 </div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+
+        <h4 class="modal-title" id="myModalLabel">BEM AQUI O NOME -> {{detalhe.tituloVaga}}</h4>
+      </div>
+
+      <div class="modal-body">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12 col-sm-8">
+              <h2></h2>
+              <h4>Descrição da vaga</h4>
+
+              <p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions. <!--{{estagio.descricaoVaga}}--></p>
+              <h4>Empresa</h4>
+              <p>Google <!--{{estagio.nomeEmpresa}}--></p>
+              <h4>Requisitos</h4>
+              <p>Conhecimento intermediario em Java, nível de inglês intermediario. <!--{{estagio.requisitosVaga}}--></p>
+              <h4>Data de início</h4>
+              <p>20/03/2017 <!--{{estagio.dataInicio}}--></p>
+              <h4>Auxílio Transporte</h4>
+              <p>Sim <!--{{estagio.auxilioTransporte}}--></p>
+              <h4>Auxílio Extra</h4>
+              <p>Não <!--{{estagio.auxilioExtra}}--></p>
+              <h4>Local </h4>
+              <p> 344 Villa, Syndey, Australia <!--{{estagio.enderecoEmpresa}}--></p>
+              <div class="detalhe-vaga">
+                <h4>Salário</h4>
+                <p class="price"> R$ 1200,00<!--{{estagio.salarioVaga}}--></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fim do modal -->
 
 
 
