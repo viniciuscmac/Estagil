@@ -8,6 +8,7 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
 </script>
 
 <div ng-controller="estagiosCtrl">
+<div>
 
 
 
@@ -45,7 +46,7 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
           </div>
 
 
-          <button type="submit" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default" id="detalhe-btn" data-toggle="modal" data-target="#myModal" ng-click="getId(estagio.idVaga)">
+          <button type="submit" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default" id="detalhe-btn" data-toggle="modal" data-target="#myModal" ng-click="getId(estagio.idVaga, estagio.nomeEmpresa)">
 
             Detalhes
           </button>
@@ -91,6 +92,9 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
   ?>
   <!-- AQUIIIIIIIIIIIII =========================*******************========= -->
 
+  <script>
+    detalhesEstagio = JSON.parse( '<?php echo json_encode($detalhesEstagio); ?>' );
+  </script>
 
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -109,22 +113,23 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
               <h2></h2>
               <h4>Descrição da vaga</h4>
 
-              <p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions. <!--{{estagio.descricaoVaga}}--></p>
+              <p>{{detalhesEstagio[0].descricaoVaga}}</p>
               <h4>Empresa</h4>
-              <p>{{detalhesEstagio.nomeEmpresa}}</p>
+              <p>{{detalhesEstagio[0].nomeEmpresa}}</p>
               <h4>Requisitos</h4>
-              <p>{{detalhesEstagio.requisitosVaga}}</p>
+              <p>{{detalhesEstagio[0].requisitosVaga}}</p>
               <h4>Data de início</h4>
-              <p>20/03/2017 <!--{{estagio.dataInicio}}--></p>
+              <p>{{detalhesEstagio[0].dataInicio}}</p>
               <h4>Auxílio Transporte</h4>
-              <p>Sim <!--{{estagio.auxilioTransporte}}--></p>
+              <p> {{detalhesEstagio[0].auxilioTransporte}}</p>
               <h4>Auxílio Extra</h4>
-              <p>Não <!--{{estagio.auxilioExtra}}--></p>
+              <p>{{detalhesEstagio[0].auxilioExtra}}</p>
               <h4>Local </h4>
-              <p> 344 Villa, Syndey, Australia <!--{{estagio.enderecoEmpresa}}--></p>
+              <!--<p>{{estagio.enderecoEmpresa}}</p>-->
+              <p> não é retornado pela query</p>
               <div class="detalhe-vaga">
                 <h4>Salário</h4>
-                <p class="price"> R$ 1200,00<!--{{estagio.salarioVaga}}--></p>
+                <p class="price"> {{detalhesEstagio[0].salarioVaga}}</p>
               </div>
             </div>
           </div>

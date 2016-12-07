@@ -97,7 +97,7 @@ CREATE TABLE `Vagas` (
 --
 
 INSERT INTO `Vagas` (`Empresas_idEmpresas`, `idVaga`, `areaVaga`, `dataInicio`, `descricaoVaga`, `salarioVaga`, `auxilioTransporte`, `auxilioExtra`, `requisitosVaga`, `tituloVaga`) VALUES
-(6, 1, 'Desenvolvimento', '2016-12-06 00:00:00', 'A google oferece a vaga de desenvolvedor android para estagiarios', 1200, 1, 0, 'Conhecimento intermediario em java\r\nIngles intermediario', 'Desenvolvedor Android');
+(6, 1, 'Desenvolvimento', '2016-12-06 00:00:00', 'A google oferece a vaga de desenvolvedor android para estagiarios', 1200, 1, 0, 'Conhecimento intermediario em java, Ingles intermediario', 'Desenvolvedor Android');
 
 -- --------------------------------------------------------
 

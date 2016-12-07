@@ -24,4 +24,12 @@
     };
 
   });
+
+  angular
+  .module('EstagilApp')
+  .controller('loginCtrl', function($scope, $window) {
+
+    
+  });
+
 })();
