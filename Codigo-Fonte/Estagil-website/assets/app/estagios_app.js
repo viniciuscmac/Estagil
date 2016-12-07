@@ -1,10 +1,12 @@
-var app = angular.module("EstagilApp").controller("estagiosCtrl" , function ($scope, $window) {
+var app = angular.module('EstagilApp').controller("estagiosCtrl", function ($scope, $window, $cookies) {
     $scope.estagios = $window.estagios;
-    //$scope.detalhe = $window.detalhe;
+
+    $scope.detalhesEstagio = $window.detalhesEstagio;
 
     $scope.getId = function(id) {
-      console.log(id);
-      $scope.idVaga = id;
+      $scope.id = id;
+      console.log("id no angular" + $scope.id);
+      $cookies.put('id', $scope.id);
     }
 
 

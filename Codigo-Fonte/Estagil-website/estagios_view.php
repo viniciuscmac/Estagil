@@ -43,12 +43,13 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
               <span>Requisitos: {{estagio.requisitosVaga}}</span><br>
             -->
           </div>
-          <form class="" action="" method="post">
-            <input ng-show="false" type="text" name="id-detalhe" value="{{estagio.idVaga}}"/>
-            <button type="submit" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default" id="detalhe-btn" data-toggle="modal" data-target="#myModal" name="id-detalhe-btn">
-              Detalhes
-            </button>
-          </form>
+
+
+          <button type="submit" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default" id="detalhe-btn" data-toggle="modal" data-target="#myModal" ng-click="getId(estagio.idVaga)">
+
+            Detalhes
+          </button>
+
           <button type="submit" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn">
             Inscrever
           </button>
@@ -67,13 +68,30 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
 </div>
 
 
-</div>
+
 
 
 
 
 <!-- Modal -->
+
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
+
+  <!-- AQUIIIIIIIIIIIII =========================*******************========= -->
+  <?php
+  if(isset($_COOKIE['id'])){
+    $detalheId = $_COOKIE['id'];
+    print_r("ïd dos detalhes dentro do modal: " . $detalheId);
+    $detalhesEstagio = listDetalhesVaga($detalheId);
+    print_r($detalhesEstagio);
+  }
+  ?>
+  <!-- AQUIIIIIIIIIIIII =========================*******************========= -->
+
+
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -81,7 +99,7 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
           <span aria-hidden="true">&times;</span>
         </button>
 
-        <h4 class="modal-title" id="myModalLabel">BEM AQUI O NOME -> {{detalhe.tituloVaga}}</h4>
+        <h4 class="modal-title" id="myModalLabel">{{detalhesEstagio[0].tituloVaga}}</h4> <!-- ANGULAR NAO FUNCIONA DAQUI PRA BAIXO-->
       </div>
 
       <div class="modal-body">
@@ -93,9 +111,9 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
 
               <p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions. <!--{{estagio.descricaoVaga}}--></p>
               <h4>Empresa</h4>
-              <p>Google <!--{{estagio.nomeEmpresa}}--></p>
+              <p>{{detalhesEstagio.nomeEmpresa}}</p>
               <h4>Requisitos</h4>
-              <p>Conhecimento intermediario em Java, nível de inglês intermediario. <!--{{estagio.requisitosVaga}}--></p>
+              <p>{{detalhesEstagio.requisitosVaga}}</p>
               <h4>Data de início</h4>
               <p>20/03/2017 <!--{{estagio.dataInicio}}--></p>
               <h4>Auxílio Transporte</h4>
@@ -119,8 +137,9 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
     </div>
   </div>
 </div>
-<!-- Fim do modal -->
 
+<!-- Fim do modal -->
+</div>
 
 
 <?php include'footer.php';?>
