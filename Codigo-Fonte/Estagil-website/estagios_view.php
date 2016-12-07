@@ -83,8 +83,8 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
 
   <!-- AQUIIIIIIIIIIIII =========================*******************========= -->
   <?php
-  if(isset($_COOKIE['id'])){
-    $detalheId = $_COOKIE['id'];
+  if(isset($_COOKIE['idVaga'])){
+    $detalheId = $_COOKIE['idVaga'];
     print_r("ïd dos detalhes dentro do modal: " . $detalheId);
     $detalhesEstagio = listDetalhesVaga($detalheId);
     print_r($detalhesEstagio);

@@ -93,9 +93,6 @@ function novaEmpresa($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$de
 		$stmt = $conn->prepare("INSERT INTO `Estagil`.`acessoEmpresa` (`Empresas_idEmpresas`, `emailEmpresa`, `password`) VALUES (?, ?, ?)");
    		$stmt->execute(array($idtemp,$email,$password));
 		$conn->commit();
-
-		setcookie("empresaLogada", $nomeEmpresa);
-
    	}
    	catch (PDOException $ex) {
    		echo $ex;
@@ -178,15 +175,16 @@ function checkEmpresa($username,$password){
    		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
    	}
    	catch (PDOException $ex) {
-   		echo "FAILURE DATABASE";
+   		echo $ex;
    	}
 
 	foreach ($result as $row){
 		if($row['password']==$password){
-		return $row['Empresas_idEmpresas'];
+			setcookie("empresaLogada", $nomeEmpresa);
+			return $row['Empresas_idEmpresas'];
 		}
 		else{
-		return 0;
+			return 0;
 		}
 	}
 }

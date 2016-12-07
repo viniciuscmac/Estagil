@@ -7,7 +7,6 @@
 
   function HeaderController($cookies, $scope) {
     var vm = this;
-    $scope.empresaLogada = $cookies.get('empresaLogada');
     console.log($scope.empresaLogada);
   }
 
@@ -27,9 +26,14 @@
 
   angular
   .module('EstagilApp')
-  .controller('loginCtrl', function($scope, $window) {
+  .controller('LoginController', function($scope,$cookies) {
+      var vm = this;
+      vm.email = '';
+      vm.password = '';
 
-    
+      vm.doLogin = function() {
+         // estagios = JSON.parse( '<?php echo json_encode(  checkEmpresa('+vm.email+ ',' + vm.password+ ') ); ?>' );
+      }
   });
 
 })();

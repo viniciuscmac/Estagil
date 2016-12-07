@@ -35,7 +35,7 @@
 
 
     <!-- Modal -->
-    <div id="loginpop" class="modal fade">
+    <div ng-controller="LoginController as loginCtrl" id="loginpop" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="row">
@@ -44,11 +44,13 @@
               <form class="" role="form">
                 <div class="form-group">
                   <label class="sr-only" for="exampleInputEmail2">Email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+                  <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email"
+                    ng-model="loginCtrl.email">
                 </div>
                 <div class="form-group">
                   <label class="sr-only" for="exampleInputPassword2">Senha</label>
-                  <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+                  <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"
+                    ng-model="loginCtrl.password">
                 </div>
                 <div class="checkbox">
                   <label>
@@ -56,7 +58,7 @@
                   </label>
 
                 </div>
-                <button type="submit" class="btn btn-success">Entrar</button>
+                <button type="submit" class="btn btn-success" ng-click="loginCtrl.doLogin()">Entrar</button>
 
                 <br><br><a href="#">Esqueci minha senha</a>
               </form>
