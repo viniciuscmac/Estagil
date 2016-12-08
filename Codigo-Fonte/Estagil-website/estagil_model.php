@@ -181,7 +181,6 @@ function checkEmpresa($username,$password){
 
 	foreach ($result as $row){
 		if($row['password']==$password){
-			setcookie("empresaLogada", $nomeEmpresa);
 			return $row['Empresas_idEmpresas'];
 		}
 		else{

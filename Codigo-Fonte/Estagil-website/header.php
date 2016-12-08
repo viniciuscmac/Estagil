@@ -54,14 +54,18 @@
             <li ng-class="{ active: isActive('/index.php')}"><a href="index.php">Home</a></li>
             <li ng-class="{ active: isActive('/estagios.php')}"><a href="estagios.php">Estágios</a></li>
             <li ng-class="{ active: isActive('/empresas.php')}"><a href="empresas.php">Empresas</a></li>
-            <li ng-class="{ active: isActive('/register.php')}"><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>
-                        <li ng-class="{ active: isActive('/empresa_login.php')}"><a href="empresa_login.php">Empresas Login</a></li>
-            <li ><a href="vagas_register.php" ng-class="{hidden: !empresaLogada}">Cadastrar Vaga {{empresaLogada}}</a></li>
+            <li ng-class="{ active: isActive('/register.php'), hidden: empresaLogada}"><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>
+                        <li ng-class="{ active: isActive('/empresa_login.php'), hidden: empresaLogada}"><a href="empresa_login.php">Empresas Login</a></li>
+            <li ><a href="vagas_register.php" ng-class="{hidden: !empresaLogada}">Cadastrar Uma Vaga</a></li>
+            <li >
+            <a href="" ng-class="{hidden: !empresaLogada}" 
+            ng-click= "logout()">Logout</a></li>
+
           </ul>
         </div>
         <!-- Nav Ends -->
 
-
+        <?php include'modal_view.php';?>
 
       </div>
     </div>

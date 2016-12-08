@@ -11,6 +11,7 @@ if(isset($_POST['loginempresa'])){
         if ($idEmpresaLogada!=0) {
           header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
                               . "/index.php?empresaid=".$idEmpresaLogada."");
+          setcookie("empresaLogada", $idEmpresaLogada);
           exit();
         }
         else {

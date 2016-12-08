@@ -5,9 +5,17 @@
   .module('EstagilApp', ['ngCookies'])
   .controller('HeaderController', HeaderController);
 
-  function HeaderController($cookies, $scope) {
+  function HeaderController($cookies, $scope, $window) {
     var vm = this;
-    console.log($scope.empresaLogada);
+    $scope.empresaLogada = $cookies.get('empresaLogada');
+    console.log("id da empresa logada: "+ $scope.empresaLogada);
+
+    $scope.logout = function logout() {
+      $cookies.remove('empresaLogada');
+      console.log('logout realizado com sucesso.');
+      $window.location.href = '/index.php';
+
+    }
   }
 
 
@@ -26,13 +34,12 @@
 
   angular
   .module('EstagilApp')
-  .controller('LoginEmpresaController', function($scope,$cookies) {
+  .controller('LoginEmpresaController', function($scope,$cookies, $http) {
       var vm = this;
       vm.email = '';
       vm.password = '';
-
       vm.doLogin = function() {
-         // var id = JSON.parse( '<?php echo json_encode(  checkEmpresa('+vm.email+ ',' + vm.password+ ') ); ?>' );
+          //$http.get()
       }
   });
 

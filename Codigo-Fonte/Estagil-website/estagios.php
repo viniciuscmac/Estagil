@@ -8,13 +8,6 @@ if(isset($_GET['id'])){
   print_r($detalhe);
 }
 
+  include ('estagios_view.php');
 
-
-if(isset($_POST['id-detalhe-btn'])){
-   $idEstagio = $_POST['id-detalhe'];
-   print_r($idEstagio);
-   $detalhe = listDetalhesVaga($idEstagio);
-}
-
-include ('estagios_view.php');
 ?>
