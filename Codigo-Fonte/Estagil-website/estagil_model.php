@@ -184,7 +184,7 @@ function checkEmpresa($username,$password){
 			return $row['Empresas_idEmpresas'];
 		}
 		else{
-			return 0;
+			return "RESUKTASDSOJAISJASHFAIHFIASFHIAHFAI";
 		}
 	}
 }

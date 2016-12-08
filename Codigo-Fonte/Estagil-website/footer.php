@@ -35,12 +35,12 @@
 
 
     <!-- Modal -->
-    <div ng-controller="LoginController as loginCtrl" id="loginpop" class="modal fade">
+    <div id="loginpop" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="row">
             <div class="col-sm-6 login">
-              <h4>Login</h4>
+              <h4>Login Estudante</h4>
               <form class="" role="form">
                 <div class="form-group">
                   <label class="sr-only" for="exampleInputEmail2">Email</label>
@@ -69,8 +69,12 @@
               <button type="submit" class="btn btn-info"  onclick="window.location.href='register.php'">Criar conta</button><br><br>
 
               <h4>É uma empresa?</h4>
-              <p>Cadastre-a hoje e ofereça vagas de estágios!</p>
-              <button type="submit" class="btn btn-info btn-empresa"  onclick="window.location.href='empresa_register.php'">Criar conta de Empresa</button>
+              <p>Faça Login ou Cadastre-a hoje e ofereça vagas de estágios!</p>
+              <button type="submit" class="btn btn-info btn-empresa" onclick="window.location.href='empresa_register.php'">Criar conta de Empresa</button>
+              <button type="submit" class="btn btn-info btn-default" data-toggle="modal" 
+                data-target="#loginempresapop" 
+              data-dismiss="modal"> Fazer Login Empresa</button>
+
             </div>
 
 
@@ -80,8 +84,6 @@
       </div>
     </div>
     <!-- /.modal -->
-
-
 
   </body>
   </html>

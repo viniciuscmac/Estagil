@@ -26,13 +26,13 @@
 
   angular
   .module('EstagilApp')
-  .controller('LoginController', function($scope,$cookies) {
+  .controller('LoginEmpresaController', function($scope,$cookies) {
       var vm = this;
       vm.email = '';
       vm.password = '';
 
       vm.doLogin = function() {
-         // estagios = JSON.parse( '<?php echo json_encode(  checkEmpresa('+vm.email+ ',' + vm.password+ ') ); ?>' );
+         // var id = JSON.parse( '<?php echo json_encode(  checkEmpresa('+vm.email+ ',' + vm.password+ ') ); ?>' );
       }
   });
 
