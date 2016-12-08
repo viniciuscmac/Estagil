@@ -160,6 +160,7 @@ function checkAluno($username,$password){
 	foreach ($result as $row){
 		if($row['password']==$password){
 		return $row['Alunos_idAlunos'];
+		setcookie("alunoLogado", $nomeAluno);
 		}
 		else{
 		return 0;
@@ -184,7 +185,7 @@ function checkEmpresa($username,$password){
 			return $row['Empresas_idEmpresas'];
 		}
 		else{
-			return "RESUKTASDSOJAISJASHFAIHFIASFHIAHFAI";
+			return 0;
 		}
 	}
 }

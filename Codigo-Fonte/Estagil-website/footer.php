@@ -41,26 +41,26 @@
           <div class="row">
             <div class="col-sm-6 login">
               <h4>Login Estudante</h4>
-              <form class="" role="form">
+              <form class="" action="" method="post">
                 <div class="form-group">
                   <label class="sr-only" for="exampleInputEmail2">Email</label>
-                  <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email"
-                    ng-model="loginCtrl.email">
+                  <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter email"
+                    ng-model="loginCtrl.email" name="emailUser">
                 </div>
                 <div class="form-group">
                   <label class="sr-only" for="exampleInputPassword2">Senha</label>
                   <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password"
-                    ng-model="loginCtrl.password">
+                    ng-model="loginCtrl.password" name="passwordUser">
                 </div>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox"> Mantenha-me conectado
+                    <input type="checkbox" name="checkbox"> Mantenha-me conectado
                   </label>
 
                 </div>
-                <button type="submit" class="btn btn-success" ng-click="loginCtrl.doLogin()">Entrar</button>
-
-                <br><br><a href="#">Esqueci minha senha</a>
+                <button type="submit" class="btn btn-success" ng-click="loginCtrl.doLogin()"name="loginuser">Entrar</button>
+                <h3><?php echo $loginmessage;?></h3>
+                <br><a href="#">Esqueci minha senha</a>
               </form>
             </div>
             <div class="col-sm-6">
@@ -71,8 +71,8 @@
               <h4>É uma empresa?</h4>
               <p>Faça Login ou Cadastre-a hoje e ofereça vagas de estágios!</p>
               <button type="submit" class="btn btn-info btn-empresa" onclick="window.location.href='empresa_register.php'">Criar conta de Empresa</button>
-              <button type="submit" class="btn btn-info btn-default" data-toggle="modal" 
-                data-target="#loginempresapop" 
+              <button type="submit" class="btn btn-info btn-default" data-toggle="modal"
+                data-target="#loginempresapop"
               data-dismiss="modal"> Fazer Login Empresa</button>
 
             </div>

@@ -1,16 +1,16 @@
 <?php include'header.php';?>
 
 <div ng-controller="LoginEmpresaController as loginEmpresaCtrl" id="loginempresapop" >
-  
+
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="row">
             <div class="col-sm-6 login">
               <h4>Login Empresa</h4>
-              <form class="" method="post">
+              <form class="" method="post" action="">
                 <div class="form-group">
                   <label class="sr-only" for="exampleInputEmail2">Email</label>
-                  <input name="form_email_empresa_login" type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email"
+                  <input name="form_email_empresa_login" type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter email"
                     ng-model="loginEmpresaCtrl.email">
                 </div>
                 <div class="form-group">
@@ -20,14 +20,16 @@
                 </div>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox"> Mantenha-me conectado
+                    <input type="checkbox" name="checkbox"> Mantenha-me conectado
                   </label>
 
                 </div>
-                <button type="submit" class="btn btn-success" name="SignEmpresa">Entrar</button>
-
                 <br><br><a href="#">Esqueci minha senha</a>
+                <button type="submit" class="btn btn-success" name="loginempresa">Entrar</button>
+
+
               </form>
+              <center><h3><?php echo $loginmessage; ?></h3></center>
             </div>
           </div>
         </div>
