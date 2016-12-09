@@ -10,7 +10,7 @@ if(isset($_POST['loginempresa'])){
         $idEmpresaLogada = checkEmpresa($emailEmpresa, $passwordEmpresa);
         if ($idEmpresaLogada!=0) {
           header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                              . "/index.php?empresaid=".$idEmpresaLogada."");
+                              . "/portal_empresa.php?empresaid=".$idEmpresaLogada."");
           setcookie("empresaLogada", $idEmpresaLogada);
           exit();
         }
