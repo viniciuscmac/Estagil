@@ -3,7 +3,7 @@ require_once('mysql_connect.php');
 //novaEmpresa("UFSC","48-35556777","Universidade","Trindade, Floripa, SC","ufsc@ufsc.com","ufsc123");
 //$teste = checkEmpresa("ufsc@ufsc.com","ufsc123");
 //echo $teste;
-//print_r (listEmpresas());
+print_r (getEmpresaDetalhes(7));
 //novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
 
 function listEmpresas(){
@@ -136,7 +136,9 @@ function listEmpresas(){
 		global $conn;
 
 		try {
-			$stmt = $conn->query("SELECT * FROM `Empresas` WHERE `idEmpresas`='".$idEmpresa."'");
+			$stmt = $conn->query("SELECT Empresas.*, acessoEmpresa.emailEmpresa FROM Empresas
+				INNER JOIN acessoEmpresa
+				ON Empresas.idEmpresas='".$idEmpresa."'AND acessoEmpresa.Empresas_idEmpresas='".$idEmpresa."'");
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		}
 		catch (PDOException $ex) {
@@ -255,6 +257,47 @@ function listEmpresas(){
 		return $result;
 
 	}
+
+	function listInscritos($idVaga){
+		global $conn;
+		$id = [];
+		$final = array();
+
+		try {
+
+			$stmt = $conn->query("SELECT `Alunos_idAlunos` FROM `Inscricoes` WHERE Vagas_idVaga='".$idVaga."'");
+			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		}
+		catch (PDOException $ex) {
+			echo "FAILURE DATABASE";
+		}
+
+		foreach($result as $row){
+			$id[] = $row['Alunos_idAlunos'];
+		}
+
+		foreach ($id as $value) {
+
+			try {
+
+				$stmt = $conn->query("SELECT Alunos.*, acessoAlunos.emailAluno FROM Alunos
+					INNER JOIN acessoAlunos
+					ON Alunos.idAlunos='".$value."' AND acessoAlunos.Alunos_idAlunos='".$value."'");
+				$result2 = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				$final = array_merge($final, $result2);
+			}
+			catch (PDOException $ex) {
+				echo "FAILURE DATABASE";
+			}
+
+
+		}
+
+		return $final;
+
+	}
+
 	function listVagasInscritas($idAlunos){
 		global $conn;
 
