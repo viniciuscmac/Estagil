@@ -5,7 +5,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="row">
-            <div class="col-sm-6 login">
+            <div class="col-sm-offset-3 col-sm-6 login">
               <h4>Login Empresa</h4>
               <form class="" method="post" action="">
                 <div class="form-group">
@@ -24,12 +24,13 @@
                   </label>
 
                 </div>
-                <br><br><a href="#">Esqueci minha senha</a>
+                <br><br>
                 <button type="submit" class="btn btn-success" name="loginempresa">Entrar</button>
-
+                <center><a href="#">Esqueci minha senha</a><center>
 
               </form>
-              <center><h3><?php echo $loginmessage; ?></h3></center>
+              <br>
+              <?php echo $loginmessage; ?>
             </div>
           </div>
         </div>

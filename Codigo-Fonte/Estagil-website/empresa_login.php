@@ -15,8 +15,9 @@ if(isset($_POST['loginempresa'])){
           exit();
         }
         else {
-          $loginmessage = "Login ou Senha Incorretos!";
-
+          $loginmessage = "<div class='alert alert-danger'>
+            <strong>Atenção! </strong> Email ou senha incorretos!
+          </div>";
         }
     }
 
