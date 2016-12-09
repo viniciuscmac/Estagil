@@ -6,24 +6,29 @@ require_once('mysql_connect.php');
 //print_r (listEmpresas());
 //novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
 
-function listEmpresas(){
-	global $conn;
 
-	try {
+    // ... proceed to declare your function
 
-		$stmt = $conn->query("SELECT Empresas.*, acessoEmpresa.emailEmpresa FROM Empresas
-			INNER JOIN acessoEmpresa
-			ON Empresas.idEmpresas=acessoEmpresa.Empresas_idEmpresas");
-			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-		}
-		catch (PDOException $ex) {
-			echo "FAILURE DATABASE";
-		}
+		function listEmpresas(){
+			global $conn;
 
-		return $result;
+			try {
+
+				$stmt = $conn->query("SELECT Empresas.*, acessoEmpresa.emailEmpresa FROM Empresas
+					INNER JOIN acessoEmpresa
+					ON Empresas.idEmpresas=acessoEmpresa.Empresas_idEmpresas");
+					$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+				}
+				catch (PDOException $ex) {
+					echo "FAILURE DATABASE";
+				}
+
+				return $result;
 
 
-	}
+			}
+
+
 
 	function listAlunos(){
 		global $conn;

@@ -8,7 +8,7 @@ font-style: normal;
 
 
 
-body {	color:#555;	font:normal 13px/22px Arial;	background:url(../images/bgmain.png) #eee;}
+body {	color:#555;	font:normal 13px/22px Arial;	background:#eee;}
 
 h1,h2,h3,h4,h5 { font-weight:normal; font-family: din;margin: 0;padding: 0;color: #000}
 h1{font-size: 60px; margin-bottom: 25px;color: #fff;}
@@ -110,8 +110,11 @@ table{background-color: #fff;}
 .login button,.register button,.contact button{width: 100%;border-radius: 5px;}
 .radio-button{padding: 10px; height:15px !important; margin-right: 5px !important;}
 
-/*inside*/
+/*inside
+
 .inside-banner{background:url(../images/bginside.jpg) #222;color: #fff; padding: 30px 0;}
+*/
+.inside-banner{background: #656262;color: #fff; padding: 30px 0;}
 .inside-banner h2{margin: 0; color: #fff;}
 .inside-banner span{margin-top: 10px;}
 
@@ -124,6 +127,10 @@ table{background-color: #fff;}
 .hot-properties h4{margin-bottom: 20px;}
 .hot-properties .row{margin-bottom: 20px;}
 .hot-properties .row p{margin-bottom: 5px;}
+.sidebar{background-color: black;}
+.sidebar h4 {color: white;}
+.portal {margin-left: 0px;}
+.portal a:hover {color: white;}
 
 .sortby .result{margin-top: 10px;}
 
