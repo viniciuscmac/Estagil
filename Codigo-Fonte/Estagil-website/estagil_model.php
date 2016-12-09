@@ -3,7 +3,7 @@ require_once('mysql_connect.php');
 //novaEmpresa("UFSC","48-35556777","Universidade","Trindade, Floripa, SC","ufsc@ufsc.com","ufsc123");
 //$teste = checkEmpresa("ufsc@ufsc.com","ufsc123");
 //echo $teste;
-print_r (getEmpresaDetalhes(7));
+//print_r (getEmpresaDetalhes(7));
 //novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
 
 function listEmpresas(){
