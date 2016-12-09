@@ -56,7 +56,7 @@
             <li ng-class="{ active: isActive('/estagios.php')}"><a href="estagios.php">Estágios</a></li>
             <li ng-class="{ active: isActive('/empresas.php')}"><a href="empresas.php">Empresas</a></li>
             <li ng-class="{ active: isActive('/register.php'), hidden: empresaLogada}"><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>
-            <li ng-class="{ active: isActive('/empresa_login.php'), hidden: empresaLogada}"><a href="empresa_login.php">Empresas Login</a></li>
+            <li ng-class="{ active: isActive('/empresa_login.php'), hidden: empresaLogada}"><a href="login.php">Login</a></li>
 
 
             <li class="dropdown">
