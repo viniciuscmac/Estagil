@@ -11,13 +11,13 @@ if(isset($_POST['login'])){
         $idAlunoLogado = checkAluno($email,$password);
         if ($idEmpresaLogada!=0) {
           header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                              . "/portal_empresa.php");
+                              . "portal_empresa.php");
           setcookie("empresaLogada", $idEmpresaLogada);
           exit();
         }
         else if ($idAlunoLogado!=0) {
           header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                              . "/portal_aluno.php");
+                              . "portal_aluno.php");
           setcookie("alunoLogado", $idAlunoLogado);
           exit();
         }
