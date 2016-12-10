@@ -1,11 +1,11 @@
 <?php
 require_once('mysql_connect.php');
-//novaEmpresa("UFSC","48-35556777","Universidade","Trindade, Floripa, SC","ufsc@ufsc.com","ufsc123");
+//updateInfoEmpresa(6,"UFSC","48-35556777","Universidade","Trindade, Floripa, SC","Universidade","ufsc@ufsc.com","ufsc123");
 //$teste = checkEmpresa("ufsc@ufsc.com","ufsc123");
 //echo $teste;
 //print_r (getEmpresaDetalhes(7));
 //novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
-
+//updateInfoAluno(1,"Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","12345");
 
     // ... proceed to declare your function
 
@@ -418,14 +418,14 @@ require_once('mysql_connect.php');
 		}
 	}
 
-	function updateInfoEmpresa($idEmpresa,$nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$email,$password){
+	function updateInfoEmpresa($idEmpresa,$nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$descricaoEmpresa,$email,$password){
 		global $conn;
 		try {
 			$conn->beginTransaction();
 
 
-			$stmt = $conn->prepare("UPDATE `Estagil`.`Empresas`  SET `nomeEmpresa` = ?, `foneEmpresa` = ?, `areaEmpresa` = ?, `enderecoEmpresa` = ? WHERE `Empresas`.`idEmpresas` = ?");
-			$stmt->execute(array($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$idEmpresa));
+			$stmt = $conn->prepare("UPDATE `Estagil`.`Empresas`  SET `nomeEmpresa` = ?, `foneEmpresa` = ?, `areaEmpresa` = ?, `enderecoEmpresa` = ?, `descricaoEmpresa` = ? WHERE `Empresas`.`idEmpresas` = ?");
+			$stmt->execute(array($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$descricaoEmpresa,$idEmpresa));
 
 			$stmt = $conn->prepare("UPDATE `Estagil`.`acessoEmpresa` SET `emailEmpresa` = ?, `password` = ? WHERE `acessoEmpresa`.`Empresas_idEmpresas` = ?");
 			$stmt->execute(array($email,$password,$idEmpresa));
