@@ -16,8 +16,9 @@ if(isset($_POST['Save'])){
   $descricaoEmpresa = $_POST['form_descricao_empresa'];
   $password = $_POST['form_senha_empresa'];
   updateInfoEmpresa($idEmpresa,$nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$descricaoEmpresa,$email,$password);
+
   header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-  . "/portal_empresa.php");
+  . "perfil_empresa.php");
   exit();
 }
 
