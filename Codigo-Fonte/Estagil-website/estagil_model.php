@@ -6,7 +6,7 @@ require_once('mysql_connect.php');
 //print_r (getEmpresaDetalhes(7));
 //novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
 //updateInfoAluno(1,"Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","12345");
-
+//print_r(listVagasEmpresa(6));
     // ... proceed to declare your function
 
 		function listEmpresas(){
@@ -229,12 +229,12 @@ require_once('mysql_connect.php');
 
 	}
 
-	function listVagasArea($areaVaga){
+	function listVagasEmpresa($idEmpresa){
 		global $conn;
 
 		try {
 
-			$stmt = $conn->query("SELECT * FROM `Vagas` WHERE `areaVaga`='".$areaVaga."'");
+			$stmt = $conn->query("SELECT * FROM `Vagas` WHERE `Empresas_idEmpresas`='".$idEmpresa."'");
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		}
