@@ -53,23 +53,14 @@
           <ul class="nav navbar-nav navbar-right" id="navbar-menu">
             <li ng-class="{ active: isActive('/index.php'), hidden: empresaLogada}"><a href="index.php">Home</a></li>
             <li ng-class="{ active: isActive('/portal_empresa.php'), hidden: !empresaLogada}"><a href="portal_empresa.php">Início</a></li>
+            <li ng-class="{ active: isActive('/portal_aluno.php'), hidden: !alunoLogado}"><a href="portal_aluno.php">Início</a></li>
             <li ng-class="{ active: isActive('/estagios.php')}"><a href="estagios.php">Estágios</a></li>
             <li ng-class="{ active: isActive('/empresas.php')}"><a href="empresas.php">Empresas</a></li>
-            <li ng-class="{ active: isActive('/register.php'), hidden: empresaLogada}"><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>
-            <li ng-class="{ active: isActive('/empresa_login.php'), hidden: empresaLogada}"><a href="login.php">Login</a></li>
+            <!--<li ng-class="{ active: isActive('/register.php'), hidden: empresaLogada}"><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>-->
+            <li ng-class="{ active: isActive('/login.php'), hidden: userLogado()}"><a href="login.php">Login</a></li>
+            <li><a href="" ng-click= "logout()" ng-class="{hidden: !userLogado()}">Logout</a></li>
 
 
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" ng-class="{hidden: !empresaLogada}">Minha Empresa <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <!--<li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li> -->
-                <li ><a href="perfil_empresa.php">Ver perfil</a></li>
-                <li ><a href="vagas_register.php">Cadastrar Uma Vaga</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="" ng-click= "logout()">Logout</a></li>
-              </ul>
-            </li>
 
           </ul>
         </div>

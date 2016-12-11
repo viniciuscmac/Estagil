@@ -19,12 +19,12 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
       <div class="col-lg-2 col-sm-4 sidebar">
 
         <div class="spacer">
-          <h4>Minha Empresa</h4>
+          <h4>Bem vindo</h4>
           <div class="row">
             <div class="col-lg-12 col-sm-5">
               <ul class="list-unstyled">
                 <li><a href="#">Editar perfil</a></li>
-                <li><a href="#">Cadastrar Nova Vaga</a></li>
+                <li><a href="#">Ver minhas inscrições</a></li>
 
               </ul></div>
 

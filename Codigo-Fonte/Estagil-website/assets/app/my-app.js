@@ -8,14 +8,37 @@
   function HeaderController($cookies, $scope, $window) {
     var vm = this;
     $scope.empresaLogada = $cookies.get('empresaLogada');
-    console.log("id da empresa logada: "+ $scope.empresaLogada);
+    $scope.alunoLogado = $cookies.get('alunoLogado');
+    $scope.logout = logout;
+    $scope.userLogado = userLogado;
 
-    $scope.logout = function logout() {
-      $cookies.remove('empresaLogada');
+    console.log("id da empresa logada: "+ $scope.empresaLogada);
+    console.log("id do aluno logado: "+ $scope.alunoLogado);
+
+    function logout() {
+      if(angular.isDefined($cookies.get('empresaLogada'))){
+        $cookies.remove('empresaLogada');
+      }
+      else {
+        $cookies.remove('alunoLogado');
+      }
+
       console.log('logout realizado com sucesso.');
       $window.location.href = '/index.php';
 
     }
+
+    function userLogado(){
+
+      if(angular.isDefined($cookies.get('empresaLogada')) || angular.isDefined($cookies.get('alunoLogado'))){
+        return true;
+      }
+      else return false;
+      }
+
+
+
+
   }
 
 
