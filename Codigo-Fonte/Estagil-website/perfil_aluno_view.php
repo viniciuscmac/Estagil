@@ -30,7 +30,7 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
 
             <div class="periodo">
               <h4>Período</h4>
-              <select class="form-control" name="form_periodo" ng-options="o.name for o in perfilCtrl.options" ng-model="perfilCtrl.selectedOption" ng-disabled="!perfilCtrl.editar" ng-change="perfilCtrl.setSemestre()"></select>
+              <select class="form-control" name="form_periodo" ng-options="o.name for o in perfilCtrl.options track by o.id" ng-model="perfilCtrl.selectedOption" ng-disabled="!perfilCtrl.editar" ng-change="perfilCtrl.setSemestre()"></select>
               selectedOption: {{perfilCtrl.selectedOption}}
               semestreAluno: {{perfilCtrl.aluno.semestreAluno}}
             </div>
