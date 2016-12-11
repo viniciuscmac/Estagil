@@ -23,7 +23,7 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
           <div class="row">
             <div class="col-lg-12 col-sm-5">
               <ul class="list-unstyled">
-                <li><a href="#">Editar perfil</a></li>
+                <li><a href="perfil_aluno.php">Editar perfil</a></li>
                 <li><a href="#">Ver minhas inscrições</a></li>
 
               </ul></div>

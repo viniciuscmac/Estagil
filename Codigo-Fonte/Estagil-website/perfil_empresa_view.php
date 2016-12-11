@@ -23,7 +23,7 @@ var empresa = JSON.parse( '<?php echo json_encode($empresa); ?>' );
         <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
 
           <form class="" action="" method="post">
-            <input type="text" class="form-control" placeholder="Nome da Empresa" name="form_nome_empresa" ng-model="perfilCtrl.empresa.nomeEmpresa" ng-disabled="!perfilCtrl.editar"required>
+            <input type="text" class="form-control" placeholder="Nome da Empresa" name="form_nome_empresa" ng-model="perfilCtrl.empresa.nomeEmpresa" ng-disabled="!perfilCtrl.editar" required>
             <input type="email" class="form-control" placeholder="Email" name="form_email_empresa" ng-model="perfilCtrl.empresa.emailEmpresa"  ng-disabled="!perfilCtrl.editar" required>
             <input type="text" class="form-control" placeholder="Telefone" name="form_telefone_empresa" ng-model="perfilCtrl.empresa.foneEmpresa" ng-disabled="!perfilCtrl.editar" required>
             <input type="text" class="form-control" placeholder="Área da Empresa" name="form_area_empresa"  ng-model="perfilCtrl.empresa.areaEmpresa" ng-disabled="!perfilCtrl.editar" required>

@@ -34,15 +34,12 @@
         return true;
       }
       else return false;
-      }
+    }
 
 
 
 
   }
-
-
-
 
   angular
   .module('EstagilApp')
@@ -58,12 +55,12 @@
   angular
   .module('EstagilApp')
   .controller('LoginEmpresaController', function($scope,$cookies, $http) {
-      var vm = this;
-      vm.email = '';
-      vm.password = '';
-      vm.doLogin = function() {
-          //$http.get()
-      }
+    var vm = this;
+    vm.email = '';
+    vm.password = '';
+    vm.doLogin = function() {
+      //$http.get()
+    }
   });
 
 })();
