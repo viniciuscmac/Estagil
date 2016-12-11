@@ -5,7 +5,7 @@ require_once('mysql_connect.php');
 //echo $teste;
 //print_r (getEmpresaDetalhes(7));
 //novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
-//updateInfoAluno(1,"Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","12345");
+//updateInfoAluno(2,"Joao","62-34567890","Ciencias da Computacao","4","Gyn","joao@gmail.com","12345");
 //print_r(listVagasEmpresa(6));
     // ... proceed to declare your function
 
@@ -401,13 +401,13 @@ require_once('mysql_connect.php');
 		return $result;
 	}
 
-	function updateInfoAluno($idAluno,$nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$idadeAluno,$email,$password){
+	function updateInfoAluno($idAluno,$nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$email,$password){
 		global $conn;
 		try {
 			$conn->beginTransaction();
 
-			$stmt = $conn->prepare("UPDATE `Estagil`.`Alunos`  SET `nomeAluno` = ?, `foneAluno` = ?, `cursoAluno` = ?,  `semestreAluno` = ?, `enderecoAluno` = ?,  `idadeAluno` = ? WHERE `Alunos`.`idAlunos` = ?");
-			$stmt->execute(array($nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$idadeAluno,$idAluno));
+			$stmt = $conn->prepare("UPDATE `Estagil`.`Alunos`  SET `nomeAluno` = ?, `foneAluno` = ?, `cursoAluno` = ?,  `semestreAluno` = ?, `enderecoAluno` = ? WHERE `Alunos`.`idAlunos` = ?");
+			$stmt->execute(array($nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$idAluno));
 
 			$stmt = $conn->prepare("UPDATE `Estagil`.`acessoAlunos` SET `emailAluno` = ?, `password` = ? WHERE `acessoAlunos`.`Alunos_idAlunos` = ?");
 			$stmt->execute(array($email,$password,$idAluno));
