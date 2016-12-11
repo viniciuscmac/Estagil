@@ -1,5 +1,5 @@
 <?php
-include ('estagil_model.php');
+include ('/model/estagil_model.php');
 
 
 $alunos = listAlunos();
@@ -22,7 +22,5 @@ if(isset($_POST['loginuser'])){
     }
 
 include ('index_view.php');
-
-include ('empresa_login.php');
 
 ?>

@@ -1,7 +1,7 @@
 <?php include'header.php';?>
 
 
-<script src="assets/app/portal_empresa_app.js"></script>
+<script src="/app/empresas/portal_empresa.controller.js"></script>
 
 <script type="text/javascript">
 empresa = JSON.parse( '<?php echo json_encode($empresa); ?>' );

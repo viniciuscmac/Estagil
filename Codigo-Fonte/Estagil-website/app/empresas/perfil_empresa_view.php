@@ -1,6 +1,6 @@
 <?php include'header.php';?>
 
-<script src="assets/app/perfil_empresa_app.js"></script>
+<script src="/app/empresas/perfil_empresa.controller.js"></script>
 
 
 <script type="text/javascript">

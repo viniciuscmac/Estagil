@@ -6,7 +6,7 @@
         <h4>Informações</h4>
         <ul class="row">
 
-          <li class="col-lg-12 col-sm-12 col-xs-3"><a href="empresas_view.php">Empresas Cadastradas</a></li>
+          <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/app/empresas/empresas_view.php">Empresas Cadastradas</a></li>
           <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Fale conosco</a></li>
         </ul>
       </div>

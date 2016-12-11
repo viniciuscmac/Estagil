@@ -1,6 +1,6 @@
 <?php include'header.php';?>
 
-<script src="assets/app/perfil_aluno_app.js"></script>
+<script src="/app/alunos/perfil_aluno.controller.js"></script>
 
 
 <script type="text/javascript">

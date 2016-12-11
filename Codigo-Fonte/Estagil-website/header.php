@@ -14,7 +14,7 @@
   <script src="assets/script.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-cookies/angular-cookies.js">  </script>
-  <script src="assets/app/my-app.js"> </script>
+  <script src="app/my-app.js"> </script>
 
   <!-- Owl stylesheet -->
   <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
@@ -52,12 +52,12 @@
         <div class="navbar-collapse  collapse" ng-controller="navbarCtrl">
           <ul class="nav navbar-nav navbar-right" id="navbar-menu">
             <li ng-class="{ active: isActive('/index.php'), hidden: empresaLogada}"><a href="index.php">Home</a></li>
-            <li ng-class="{ active: isActive('/portal_empresa.php'), hidden: !empresaLogada}"><a href="portal_empresa.php">Início</a></li>
-            <li ng-class="{ active: isActive('/portal_aluno.php'), hidden: !alunoLogado}"><a href="portal_aluno.php">Início</a></li>
-            <li ng-class="{ active: isActive('/estagios.php')}"><a href="estagios.php">Estágios</a></li>
-            <li ng-class="{ active: isActive('/empresas.php')}"><a href="empresas.php">Empresas</a></li>
+            <li ng-class="{ active: isActive('/app/empresas/portal_empresa.php'), hidden: !empresaLogada}"><a href="portal_empresa.php">Início</a></li>
+            <li ng-class="{ active: isActive('/app/alunos/portal_aluno.php'), hidden: !alunoLogado}"><a href="portal_aluno.php">Início</a></li>
+            <li ng-class="{ active: isActive('/app/estagios/estagios.php')}"><a href="/app/estagios/estagios.php">Estágios</a></li>
+            <li ng-class="{ active: isActive('/app/empresas/empresas.php')}"><a href="empresas.php">Empresas</a></li>
             <!--<li ng-class="{ active: isActive('/register.php'), hidden: empresaLogada}"><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>-->
-            <li ng-class="{ active: isActive('/login.php'), hidden: userLogado()}"><a href="login.php">Login</a></li>
+            <li ng-class="{ active: isActive('app/login/login.php'), hidden: userLogado()}"><a href="login.php">Login</a></li>
             <li><a href="" ng-click= "logout()" ng-class="{hidden: !userLogado()}">Logout</a></li>
 
 
