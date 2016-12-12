@@ -7,6 +7,7 @@ require_once('mysql_connect.php');
 //novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
 //updateInfoAluno(2,"Joao","62-34567890","Ciencias da Computacao","4","Gyn","joao@gmail.com","12345");
 //print_r(listVagasEmpresa(6));
+//deleteVaga(2);
     // ... proceed to declare your function
 
 		function listEmpresas(){
@@ -326,6 +327,22 @@ require_once('mysql_connect.php');
 		try {
 
 			$stmt = $conn->query("DELETE FROM `Estagil`.`Alunos` WHERE `idAlunos` = ".$id."");
+			//$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+		}
+		catch (PDOException $ex) {
+			echo "FAILURE DATABASE";
+		}
+
+		//return $result;
+	}
+
+	function deleteVaga($idVaga){
+		global $conn;
+
+		try {
+
+			$stmt = $conn->query("DELETE FROM `Vagas` WHERE `idVaga` = ".$idVaga."");
 			//$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		}
