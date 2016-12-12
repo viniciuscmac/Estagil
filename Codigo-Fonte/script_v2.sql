@@ -3,18 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Dec 06, 2016 at 04:19 PM
+-- Generation Time: Dec 12, 2016 at 05:38 PM
 -- Server version: 5.5.42
 -- PHP Version: 5.6.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `Estagil`
@@ -34,7 +28,14 @@ CREATE TABLE `Alunos` (
   `semestreAluno` int(11) DEFAULT NULL,
   `enderecoAluno` varchar(45) DEFAULT NULL,
   `idadeAluno` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `Alunos`
+--
+
+INSERT INTO `Alunos` (`idAlunos`, `nomeAluno`, `foneAluno`, `cursoAluno`, `semestreAluno`, `enderecoAluno`, `idadeAluno`) VALUES
+(1, 'Moises', '9801 0909', 'Eng. de Software', 6, 'Rua debaixo do viaduto', 21);
 
 -- --------------------------------------------------------
 
@@ -56,8 +57,8 @@ CREATE TABLE `Empresas` (
 --
 
 INSERT INTO `Empresas` (`idEmpresas`, `nomeEmpresa`, `foneEmpresa`, `areaEmpresa`, `enderecoEmpresa`, `descricaoEmpresa`) VALUES
-(6, 'Google', '9999-9999', 'TI', 'Rua da Google, San Francisco - CA', 'Google Inc.'),
-(7, 'IBM', '8888-8888', 'TI', 'Rua da IBM, Goiania - GO', 'International Business Machines (IBM)'),
+(6, 'Google ', '9999-9999', 'ti', 'San Francisco, CA', 'google inc  teste'),
+(7, 'IBM', '8888-8888', 'TI', 'Rua IBM, Goiania - Go', 'IBM e uma empresa de tecnologia e computacao teste'),
 (8, 'UFSC', '48-35556777', 'Universidade', 'Trindade, Floripa, SC', 'ufsc@ufsc.com');
 
 -- --------------------------------------------------------
@@ -68,9 +69,7 @@ INSERT INTO `Empresas` (`idEmpresas`, `nomeEmpresa`, `foneEmpresa`, `areaEmpresa
 
 CREATE TABLE `Inscricoes` (
   `Alunos_idAlunos` int(11) NOT NULL,
-  `Vagas_idVaga` int(11) DEFAULT NULL,
-  `dataVaga` datetime DEFAULT NULL,
-  `datafinalVaga` datetime DEFAULT NULL
+  `Vagas_idVaga` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -90,14 +89,17 @@ CREATE TABLE `Vagas` (
   `auxilioExtra` tinyint(1) DEFAULT NULL,
   `requisitosVaga` varchar(300) DEFAULT NULL,
   `tituloVaga` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `Vagas`
 --
 
 INSERT INTO `Vagas` (`Empresas_idEmpresas`, `idVaga`, `areaVaga`, `dataInicio`, `descricaoVaga`, `salarioVaga`, `auxilioTransporte`, `auxilioExtra`, `requisitosVaga`, `tituloVaga`) VALUES
-(6, 1, 'Desenvolvimento', '2016-12-06 00:00:00', 'A google oferece a vaga de desenvolvedor android para estagiarios', 1200, 1, 0, 'Conhecimento intermediario em java, Ingles intermediario', 'Desenvolvedor Android');
+(6, 1, 'Desenvolvimento', '2016-12-06 00:00:00', 'A google oferece a vaga de desenvolvedor android para estagiarios', 1200, 1, 0, 'Conhecimento intermediario em java. Ingles intermediario', 'Desenvolvedor Android'),
+(6, 3, 'Desenvolvimento', '2016-12-21 00:00:00', 'A google oferece vaga de desenvolvimento web', 950, 1, 0, 'Conhecimento em HTML, CSS, e javascript', 'Desenvolvedor Web'),
+(6, 5, 'TI', '2017-01-12 00:00:00', 'Suporte de sistemas', 800, 0, 0, 'NÃ­vel de ingles intermediario', 'Suporte'),
+(7, 6, 'Desenvolvimento', '2017-01-11 00:00:00', 'A ibm oferece vaga de estÃ¡gio para desenvolvimento java', 1000, 1, 0, 'Conhecimento bÃ¡sico java e ingles intermediario', 'Desenvolvedor Java');
 
 -- --------------------------------------------------------
 
@@ -110,6 +112,13 @@ CREATE TABLE `acessoAlunos` (
   `emailAluno` varchar(45) NOT NULL,
   `password` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `acessoAlunos`
+--
+
+INSERT INTO `acessoAlunos` (`Alunos_idAlunos`, `emailAluno`, `password`) VALUES
+(1, 'moises@email.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -129,8 +138,7 @@ CREATE TABLE `acessoEmpresa` (
 
 INSERT INTO `acessoEmpresa` (`Empresas_idEmpresas`, `emailEmpresa`, `password`) VALUES
 (6, 'estagio@google.com', 'google'),
-(8, 'ufsc123', NULL),
-(7, 'estagio@microsoft.com', 'microsoft');
+(7, 'estagio@ibm.com', 'ibm');
 
 --
 -- Indexes for dumped tables
@@ -183,7 +191,7 @@ ALTER TABLE `acessoEmpresa`
 -- AUTO_INCREMENT for table `Alunos`
 --
 ALTER TABLE `Alunos`
-  MODIFY `idAlunos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAlunos` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `Empresas`
 --
@@ -193,7 +201,7 @@ ALTER TABLE `Empresas`
 -- AUTO_INCREMENT for table `Vagas`
 --
 ALTER TABLE `Vagas`
-  MODIFY `idVaga` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `idVaga` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 --
 -- Constraints for dumped tables
 --
@@ -222,7 +230,3 @@ ALTER TABLE `acessoAlunos`
 --
 ALTER TABLE `acessoEmpresa`
   ADD CONSTRAINT `fk_table1_Empresas1` FOREIGN KEY (`Empresas_idEmpresas`) REFERENCES `Empresas` (`idEmpresas`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
