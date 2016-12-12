@@ -31,8 +31,6 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
             <div class="periodo">
               <h4>Período</h4>
               <select class="form-control" name="form_periodo" ng-options="o.name for o in perfilCtrl.options track by o.id" ng-model="perfilCtrl.selectedOption" ng-disabled="!perfilCtrl.editar" ng-change="perfilCtrl.setSemestre()"></select>
-              selectedOption: {{perfilCtrl.selectedOption}}
-              semestreAluno: {{perfilCtrl.aluno.semestreAluno}}
             </div>
 
             <textarea rows="2" class="form-control" placeholder="Endereço" name="form_endereco" ng-model="perfilCtrl.aluno.enderecoAluno" ng-disabled="!perfilCtrl.editar" required></textarea>
@@ -41,7 +39,9 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
 
             <button type="button" class="btn btn-default" name="Edit" ng-show="!perfilCtrl.editar" ng-click="perfilCtrl.setEditar()">Editar</button>
             <button ng-show="perfilCtrl.editar" type="button" class="btn btn-default" name="Cancel"  ng-click="perfilCtrl.setEditar()">Cancelar</button>
-            <br><button type="submit" class="btn btn-success" name="Save" ng-show="perfilCtrl.editar">Salvar</button>
+            <div class="">
+              <br><button type="submit" class="btn btn-success" name="Save" ng-show="perfilCtrl.editar">Salvar</button>
+            </div>
           </form>
 
 
