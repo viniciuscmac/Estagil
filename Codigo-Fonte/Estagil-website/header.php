@@ -15,6 +15,7 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-cookies/angular-cookies.js">  </script>
   <script src="assets/app/my-app.js"> </script>
+  
 
   <!-- Owl stylesheet -->
   <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">

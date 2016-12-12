@@ -25,7 +25,8 @@ h6 span{margin-right: 5px; font-size: 12px;}
 p{margin-bottom: 30px;}
 a{color:#999; text-decoration:none;outline: none;}
 a:hover{color:#333;}
-.spacer{margin-top: 40px;margin-bottom:40px;}
+.spacer{margin-top: 30px; margin-bottom: 30px;}
+.spacer-portal{margin-top: 30px;}
 .center{text-align: center;}
 .fullwidth{width: 100%;}
 select,input{outline: 0; margin-bottom: 20px;}
@@ -43,6 +44,7 @@ table{background-color: #fff;}
 .btn-empresa{ background: rgba(0, 16, 227, 0.72)}
 .btn-detalhe{float: right; margin-top:10px;}
 .btn-inscrever{float: right; background: #82d110; margin-top:10px;}
+.btn-cancelar{float: right; background: #e90f22; margin-top:10px;}
 
 .thumbnail{ background-color:#fff;}
 
@@ -127,10 +129,19 @@ table{background-color: #fff;}
 .hot-properties h4{margin-bottom: 20px;}
 .hot-properties .row{margin-bottom: 20px;}
 .hot-properties .row p{margin-bottom: 5px;}
-.sidebar{background-color: black;}
-.sidebar h4 {color: white;}
+
+
+/* Portal */
 .portal {margin-left: 0px;}
-.portal a:hover {color: white;}
+.portal a {color: black; margin-bottom: : 20px; font-size: 1.1em;}
+.portal a:hover {color: rgb(86, 118, 124);}
+.portal-main-view {border-left: 1px solid #ddd}
+
+/* Sidebar */
+.nav-sidebar a { color: #333;}
+.nav-sidebar li a:hover { background-color: #656262; color: #fff; text-shadow: 1px 1px 1px black;}
+.sidebar-padding { padding-right: 0px;}
+
 
 .sortby .result{margin-top: 10px;}
 

@@ -9,9 +9,6 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
 
 <div ng-controller="estagiosCtrl">
 
-
-
-
   <div class="inside-banner">
     <div class="container">
       <h2>Estagios</h2>
@@ -40,71 +37,70 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
             data-target="#myModal" modal-login-empresa
             ng-click="getId(estagio.idVaga, estagio.nomeEmpresa)">
             Detalhes
-            </button>
+          </button>
 
-            <button type="submit" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn">
-              Inscrever
-            </button>
-            <div class="clearfix"></div>
-            <hr>
+          <button type="submit" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn">
+            Inscrever
+          </button>
+          <div class="clearfix"></div>
+          <hr>
 
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal"
-  tabindex="-1" role="dialog"
-  aria-labelledby="myModalLabel" aria-hidden="true">
-  <div id="modalDialog"
-  class="modal-dialog" role="document" >
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-
-      <h4 class="modal-title" id="myModalLabel">{{detalhesEstagio.tituloVaga}}</h4> <!-- ANGULAR NAO FUNCIONA DAQUI PRA BAIXO-->
-    </div>
-
-    <div class="modal-body">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12 col-sm-8">
-            <h2></h2>
-            <h4>Descrição da vaga</h4>
-
-            <p>{{detalhesEstagio.descricaoVaga}}</p>
-            <h4>Empresa</h4>
-            <p>{{detalhesEstagio.nomeEmpresa}}</p>
-            <h4>Requisitos</h4>
-            <p>{{detalhesEstagio.requisitosVaga}}</p>
-            <h4>Data de início</h4>
-            <p>{{detalhesEstagio.dataInicio | date:'dd/MM/yyyy'}}</p>
-            <h4>Auxílio Transporte</h4>
-            <p> {{detalhesEstagio.auxilioTransporte}}</p>
-            <h4>Auxílio Extra</h4>
-            <p>{{detalhesEstagio.auxilioExtra}}</p>
-            <h4>Local </h4>
-            <!--<p>{{estagio.enderecoEmpresa}}</p>-->
-            <div class="detalhe-vaga">
-              <h4>Salário</h4>
-              <p class="price"> {{detalhesEstagio.salarioVaga | currency:"R$"}}</p>
-
-
-            </div>
-          </div>
         </div>
       </div>
     </div>
 
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal"
+tabindex="-1" role="dialog"
+aria-labelledby="myModalLabel" aria-hidden="true">
+<div id="modalDialog"
+class="modal-dialog" role="document" >
+<div class="modal-content">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+
+    <h4 class="modal-title" id="myModalLabel">{{detalhesEstagio.tituloVaga}}</h4> <!-- ANGULAR NAO FUNCIONA DAQUI PRA BAIXO-->
+  </div>
+
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 col-sm-8">
+          <h2></h2>
+          <h4>Descrição da vaga</h4>
+
+          <p>{{detalhesEstagio.descricaoVaga}}</p>
+          <h4>Empresa</h4>
+          <p>{{detalhesEstagio.nomeEmpresa}}</p>
+          <h4>Requisitos</h4>
+          <p>{{detalhesEstagio.requisitosVaga}}</p>
+          <h4>Data de início</h4>
+          <p>{{detalhesEstagio.dataInicio | date:'dd/MM/yyyy'}}</p>
+          <h4>Auxílio Transporte</h4>
+          <p> {{detalhesEstagio.auxilioTransporte == 0 ? "Não" : "Sim"}}</p>
+          <h4>Auxílio Extra</h4>
+          <p>{{detalhesEstagio.auxilioExtra == 0 ? "Não" : "Sim"}}</p>
+          <!--<p>{{estagio.enderecoEmpresa}}</p>-->
+          <div class="detalhe-vaga">
+            <h4>Salário</h4>
+            <p class="price"> {{detalhesEstagio.salarioVaga | currency:"R$"}}</p>
+
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+  </div>
+</div>
 </div>
 </div>
 
