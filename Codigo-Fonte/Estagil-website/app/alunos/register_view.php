@@ -1,4 +1,6 @@
-<?php include'header.php';?>
+<?php 
+$path = $_SERVER['DOCUMENT_ROOT'];
+include$path.'/' . 'header.php';?>
 <!-- banner -->
 <div class="inside-banner">
   <div class="container">
@@ -54,4 +56,4 @@
     </div>
   </div>
 </div>
-<?php include'footer.php';?>
+<?php include$path.'/' . 'footer.php';?>

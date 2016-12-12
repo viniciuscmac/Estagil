@@ -65,9 +65,6 @@
           </ul>
         </div>
           <!-- Nav Ends -->
-
-          <!--<?php include'modal_view.php';?> -->
-
         </div>
       </div>
     </div>

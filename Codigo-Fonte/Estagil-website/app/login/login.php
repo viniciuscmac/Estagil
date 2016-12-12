@@ -10,15 +10,16 @@ if(isset($_POST['login'])){
         $idEmpresaLogada = checkEmpresa($email, $password);
         $idAlunoLogado = checkAluno($email,$password);
         if ($idEmpresaLogada!=0) {
+          setcookie("empresaLogada", $idEmpresaLogada,0,  '/');
+
           header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
                               . "../../empresas/portal_empresa.php");
-          setcookie("empresaLogada", $idEmpresaLogada);
           exit();
         }
         else if ($idAlunoLogado!=0) {
           header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
                               . "../../alunos/portal_aluno.php");
-          setcookie("alunoLogado", $idAlunoLogado);
+          setcookie("alunoLogado", $idAlunoLogado,0,  '/');
           exit();
         }
         else {

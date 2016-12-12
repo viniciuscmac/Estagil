@@ -167,7 +167,6 @@ require_once('mysql_connect.php');
 		foreach ($result as $row){
 			if($row['password']==$password){
 				return $row['Alunos_idAlunos'];
-				setcookie("alunoLogado", $nomeAluno);
 			}
 			else{
 				return 0;

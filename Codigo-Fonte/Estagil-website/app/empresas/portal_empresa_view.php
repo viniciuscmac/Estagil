@@ -2,12 +2,11 @@
 $path = $_SERVER['DOCUMENT_ROOT'];
 include$path.'/' . 'header.php';?>
 
-<script src="portal_empresa.controller.js"></script>
-
 <script type="text/javascript">
 empresa = JSON.parse( '<?php echo json_encode($empresa); ?>' );
 </script>
 
+<script src="portal_empresa.controller.js"></script>
 
 <div ng-controller="PortalEmpresaController">
   <div class="row">
@@ -16,7 +15,7 @@ empresa = JSON.parse( '<?php echo json_encode($empresa); ?>' );
       <nav class="nav-sidebar">
         <ul class="nav">
           <li ><a href="perfil_empresa.php">Editar perfil</a></li>
-          <li ><a href="vagas_register.php">Cadastrar Nova Vaga</a></li>
+          <li ><a href="/app/estagios/vagas_register.php">Cadastrar Nova Vaga</a></li>
           <li class="nav-divider"></li>
         </ul>
       </nav>

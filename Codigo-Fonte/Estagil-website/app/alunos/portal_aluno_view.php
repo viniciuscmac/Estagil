@@ -1,7 +1,10 @@
-<?php include'header.php';?>
+<?php 
+
+$path = $_SERVER['DOCUMENT_ROOT'];
+include$path.'/' . 'header.php';?>
 
 
-<script src="app/alunos/portal_aluno.controller.js"></script>
+<script src="portal_aluno.controller.js"></script>
 
 <script type="text/javascript">
 var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
@@ -63,4 +66,4 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
 
 
 
-<?php include'footer.php';?>
+<?php include$path.'/' . 'footer.php';?>

@@ -1,5 +1,5 @@
 <?php
-include ('estagil_model.php');
+include ('../../model/estagil_model.php');
 if(isset($_POST['Sign'])){
 	#$nomeEmpresa = $_POST['form_nome_empresa'];
 	$idEmpresa = $_COOKIE['empresaLogada'];
