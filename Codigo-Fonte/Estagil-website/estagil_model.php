@@ -247,12 +247,12 @@ require_once('mysql_connect.php');
 
 	}
 
-	function inscricaoVaga($idAluno,$idVaga,$dataVaga){
+	function inscricaoVaga($idAluno,$idVaga){
 		global $conn;
 
 		try {
 
-			$stmt = $conn->query("INSERT INTO `Estagil`.`Inscricoes`(`Alunos_idAlunos`, `Vagas_idVaga`, `dataVaga`) VALUES ($idAluno,$idVaga,$dataVaga)");
+			$stmt = $conn->query("INSERT INTO `Estagil`.`Inscricoes`(`Alunos_idAlunos`, `Vagas_idVaga`) VALUES ($idAluno,$idVaga)");
 			$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		}
