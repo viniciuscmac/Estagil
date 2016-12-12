@@ -1,5 +1,5 @@
 <?php
-include ('/model/estagil_model.php');
+include ('model/estagil_model.php');
 
 
 $alunos = listAlunos();

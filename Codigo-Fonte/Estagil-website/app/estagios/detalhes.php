@@ -1,5 +1,5 @@
 <?php
-    include ('estagil_model.php');
+    include ('../../model/estagil_model.php');
 
    if(isset($_COOKIE['idVaga'])){
      $detalheId = $_COOKIE['idVaga'];

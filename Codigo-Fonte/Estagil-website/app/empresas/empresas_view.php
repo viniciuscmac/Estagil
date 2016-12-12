@@ -1,7 +1,9 @@
-<?php include'header.php';?>
+<?php 
+ $path = $_SERVER['DOCUMENT_ROOT'];
+include$path.'/' . 'header.php';?>
 
 
-<script src="/app/empresas/empresas.controller.js"></script>
+<script src="empresas.controller.js"></script>
 <!-- banner -->
 
 
@@ -42,4 +44,5 @@ empresas = JSON.parse( '<?php echo json_encode($empresas); ?>' );
     </div>
 
   </div>
-  <?php include'footer.php';?>
+  <?php include$path.'/' . 'footer.php';?>
+

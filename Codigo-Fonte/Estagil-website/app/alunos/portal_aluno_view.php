@@ -1,7 +1,7 @@
 <?php include'header.php';?>
 
 
-<script src="/app/alunos/portal_aluno.controller.js"></script>
+<script src="app/alunos/portal_aluno.controller.js"></script>
 
 <script type="text/javascript">
 var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
@@ -23,7 +23,7 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
           <div class="row">
             <div class="col-lg-12 col-sm-5">
               <ul class="list-unstyled">
-                <li><a href="/app/alunos/perfil_aluno.php">Editar perfil</a></li>
+                <li><a href="app/alunos/perfil_aluno.php">Editar perfil</a></li>
                 <li><a href="#">Ver minhas inscrições</a></li>
 
               </ul></div>

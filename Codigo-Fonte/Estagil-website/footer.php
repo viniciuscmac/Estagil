@@ -7,15 +7,15 @@
         <ul class="row">
 
           <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/app/empresas/empresas_view.php">Empresas Cadastradas</a></li>
-          <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Fale conosco</a></li>
+          <li class="col-lg-12 col-sm-12 col-xs-3"><a href="/contact.php">Fale conosco</a></li>
         </ul>
       </div>
 
 
       <div class="col-lg-3 col-lg-offset-3 col-sm-3">
         <h4>Nos siga nas redes sociais</h4>
-        <a href="#"><img src="images/facebook.png" alt="facebook"></a>
-        <a href="#"><img src="images/instagram.png" alt="instagram"></a>
+        <a href="#"><img src="/images/facebook.png" alt="facebook"></a>
+        <a href="#"><img src="/images/instagram.png" alt="instagram"></a>
       </div>
 
       <div class="col-lg-3 col-sm-3">
@@ -66,11 +66,11 @@
             <div class="col-sm-6">
               <h4>Não tem uma conta?</h4>
               <p>Cadastre-se hoje e fique sabendo em primeira mão das vagas ofertadas!</p>
-              <button type="submit" class="btn btn-info"  onclick="window.location.href='register.php'">Criar conta</button><br><br>
+              <button type="submit" class="btn btn-info"  onclick="window.location.href='/app/alunos/register.php'">Criar conta</button><br><br>
 
               <h4>É uma empresa?</h4>
               <p>Faça Login ou Cadastre-a hoje e ofereça vagas de estágios!</p>
-              <button type="submit" class="btn btn-info btn-empresa" onclick="window.location.href='empresa_register.php'">Criar conta de Empresa</button>
+              <button type="submit" class="btn btn-info btn-empresa" onclick="window.location.href='/app/empresas/empresa_register.php'">Criar conta de Empresa</button>
               <button type="submit" class="btn btn-info btn-default" data-toggle="modal"
                 data-target="#loginempresapop"
               data-dismiss="modal"> Fazer Login Empresa</button>

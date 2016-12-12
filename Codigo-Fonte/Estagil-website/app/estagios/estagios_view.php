@@ -1,7 +1,9 @@
-<?php include'header.php';?>
+<?php 
+ $path = $_SERVER['DOCUMENT_ROOT'];
+include$path.'/' . 'header.php';?>
 <!-- banner -->
 
-<script src="/app/estagios/estagios.controller.js"></script>
+<script src="estagios.controller.js"></script>
 
 <script type="text/javascript">
 estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
@@ -111,5 +113,4 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
 <!-- Fim do modal -->
 </div>
 
-
-<?php include'footer.php';?>
+<?php include$path.'/' . 'footer.php';?>

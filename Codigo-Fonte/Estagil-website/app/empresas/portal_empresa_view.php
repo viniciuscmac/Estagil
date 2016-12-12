@@ -1,11 +1,13 @@
-<?php include'header.php';?>
+<?php 
+$path = $_SERVER['DOCUMENT_ROOT'];
+include$path.'/' . 'header.php';?>
 
-
-<script src="/app/empresas/portal_empresa.controller.js"></script>
 
 <script type="text/javascript">
 empresa = JSON.parse( '<?php echo json_encode($empresa); ?>' );
 </script>
+
+<script src="portal_empresa.controller.js"></script>
 
 <div ng-controller="PortalEmpresaController">
 
@@ -116,4 +118,4 @@ Inscrever
 
 
 
-<?php include'footer.php';?>
+<?php include$path.'/' . 'footer.php';?>
