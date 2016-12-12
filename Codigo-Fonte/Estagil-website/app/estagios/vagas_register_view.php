@@ -1,4 +1,4 @@
-<?php 
+<?php
 $path = $_SERVER['DOCUMENT_ROOT'];
 include$path.'/' . 'header.php';?><!-- banner -->
 <div class="inside-banner">
@@ -23,16 +23,17 @@ include$path.'/' . 'header.php';?><!-- banner -->
           <h5>Selecione a data de início do estágio</h5>
           <input type="date" class="form-control" placeholder="Date" name="form_inicio_vaga">
           <input type="number" class="form-control" placeholder="Salário" name="form_salario_vaga" required></textarea>
+
+          <h5>Auxilio Transporte</h5>
           <select name="form_transporte_vaga" class="form-control" required>
-            <option value="1" disabled selected>Auxílio Transporte</option>
             <option value="1">Sim</option>
             <option value="0">Não</option>
           </select>
 
+          <h5>Auxilio Extra</h5>
           <select name="form_extra_vaga" class="form-control" required>
-            <option disabled selected>Auxílio Extra</option>
-            <option>Sim</option>
-            <option>Não</option>
+            <option value="1">Sim</option>
+            <option value="0">Não</option>
           </select>
 
           <input type="textArea" rows="5" class="form-control" placeholder="Descreva os requisitos da vaga" name="form_requisitos_vaga" required>

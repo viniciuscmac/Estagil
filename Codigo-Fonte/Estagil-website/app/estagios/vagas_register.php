@@ -14,9 +14,8 @@ if(isset($_POST['Sign'])){
 
 	novaVaga($idEmpresa,$areaVaga,$dataInicio,$descricaoVaga,$salarioVaga,$auxTransporte,$auxExtra,$requisitosVaga,$tituloVaga);
 
-	print_r($_SERVER['PHP_SELF']);
-  header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                         . "/index.php");
+
+  header ("Location:  http://" . $_SERVER['HTTP_HOST'] . "/app/empresas/portal_empresa.php");
 		exit();
 }
 include ('vagas_register_view.php');
