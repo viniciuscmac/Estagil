@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $path = $_SERVER['DOCUMENT_ROOT'];
 include$path.'/' . 'header.php';?>
@@ -30,7 +30,7 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
         <div class="spacer-portal">
           <div class="col-lg-offset-1">
             <h2>Minhas inscrições</h2>
-    <!-- agents -->
+            <!-- agents -->
             <div class="row" >
 
               <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7"><h3>Nome da vaga: {{estagio.tituloVaga}}</h3>
@@ -61,9 +61,5 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
 
 
 </div>
-
-
-
-
 
 <?php include$path.'/' . 'footer.php';?>

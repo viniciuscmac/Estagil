@@ -4,7 +4,7 @@ include ('../../model/estagil_model.php');
 if(isset($_COOKIE['alunoLogado'])){
   $idAluno = $_COOKIE['alunoLogado'];
   $aluno = infoAluno($idAluno)[0];
-  
+
 }
 
 if(isset($_POST['Save'])){

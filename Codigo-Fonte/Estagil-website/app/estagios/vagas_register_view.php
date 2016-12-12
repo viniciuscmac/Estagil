@@ -1,4 +1,3 @@
-<?php $_REQUEST['page'] = 'entrar';?>
 <?php 
 $path = $_SERVER['DOCUMENT_ROOT'];
 include$path.'/' . 'header.php';?><!-- banner -->

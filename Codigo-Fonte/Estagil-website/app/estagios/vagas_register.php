@@ -13,8 +13,10 @@ if(isset($_POST['Sign'])){
 	$tituloVaga = $_POST['form_titulo_vaga'];
 
 	novaVaga($idEmpresa,$areaVaga,$dataInicio,$descricaoVaga,$salarioVaga,$auxTransporte,$auxExtra,$requisitosVaga,$tituloVaga);
+
+	print_r($_SERVER['PHP_SELF']);
   header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                         . "index.php");
+                         . "/index.php");
 		exit();
 }
 include ('vagas_register_view.php');
