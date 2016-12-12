@@ -20,7 +20,7 @@ if(isset($_POST['Save'])){
 	updateInfoAluno($idAluno,$nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$email,$password);
 
   header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-  . "app/alunos/perfil_aluno.php");
+  . "/perfil_aluno.php");
 		exit();
   }
 
