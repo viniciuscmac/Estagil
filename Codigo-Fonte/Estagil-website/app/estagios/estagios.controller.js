@@ -7,7 +7,7 @@ var app = angular.module('EstagilApp')
     console.log("id no angular" + $scope.id);
     $cookies.put('idVaga', $scope.id);
 
-    $http.get('/detalhes.php').then(successCallback, errorCallback);
+    $http.get('detalhes.php').then(successCallback, errorCallback);
 
     function successCallback(response) {
       console.log(response);

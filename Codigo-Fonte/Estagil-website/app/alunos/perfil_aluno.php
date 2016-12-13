@@ -1,10 +1,10 @@
 <?php
-include ('estagil_model.php');
+include ('../../model/estagil_model.php');
 
 if(isset($_COOKIE['alunoLogado'])){
   $idAluno = $_COOKIE['alunoLogado'];
   $aluno = infoAluno($idAluno)[0];
-  
+
 }
 
 if(isset($_POST['Save'])){
@@ -20,7 +20,7 @@ if(isset($_POST['Save'])){
 	updateInfoAluno($idAluno,$nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$email,$password);
 
   header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-  . "perfil_aluno.php");
+  . "/perfil_aluno.php");
 		exit();
   }
 

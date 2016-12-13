@@ -1,4 +1,6 @@
-<?php include'header.php';?>
+<?php 
+ $path = $_SERVER['DOCUMENT_ROOT'];
+include$path.'/' . 'header.php';?>
 
 <div ng-controller="LoginEmpresaController as loginEmpresaCtrl" id="loginempresapop" >
 
@@ -37,4 +39,4 @@
       </div>
     </div>
     <!-- /.modal -->
-    <?php include'footer.php';?>
+<?php include$path.'/' . 'footer.php';?>

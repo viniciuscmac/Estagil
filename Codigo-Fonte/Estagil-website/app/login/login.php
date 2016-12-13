@@ -1,5 +1,5 @@
 <?php
-include ('estagil_model.php');
+include ('../../model/estagil_model.php');
 
 $loginmessage = "";
 
@@ -10,15 +10,16 @@ if(isset($_POST['login'])){
         $idEmpresaLogada = checkEmpresa($email, $password);
         $idAlunoLogado = checkAluno($email,$password);
         if ($idEmpresaLogada!=0) {
+          setcookie("empresaLogada", $idEmpresaLogada,0,  '/');
+
           header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                              . "portal_empresa.php");
-          setcookie("empresaLogada", $idEmpresaLogada);
+                              . "../../empresas/portal_empresa.php");
           exit();
         }
         else if ($idAlunoLogado!=0) {
           header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                              . "portal_aluno.php");
-          setcookie("alunoLogado", $idAlunoLogado);
+                              . "../../alunos/portal_aluno.php");
+          setcookie("alunoLogado", $idAlunoLogado,0,  '/');
           exit();
         }
         else {

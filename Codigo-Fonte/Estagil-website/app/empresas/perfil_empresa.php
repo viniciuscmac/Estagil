@@ -1,5 +1,5 @@
 <?php
-include ('estagil_model.php');
+include ('../../model/estagil_model.php');
 
 if(isset($_COOKIE['empresaLogada'])){
   $idEmpresa = $_COOKIE['empresaLogada'];
@@ -18,7 +18,7 @@ if(isset($_POST['Save'])){
   updateInfoEmpresa($idEmpresa,$nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$descricaoEmpresa,$email,$password);
 
   header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-  . "perfil_empresa.php");
+  . "/perfil_empresa.php");
   exit();
 }
 

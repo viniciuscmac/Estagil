@@ -1,6 +1,8 @@
-<?php include'header.php';?>
+<?php 
+ $path = $_SERVER['DOCUMENT_ROOT'];
+include$path.'/' . 'header.php';?>
 
-<script src="assets/app/perfil_empresa_app.js"></script>
+<script src="perfil_empresa.controller.js"></script>
 
 
 <script type="text/javascript">
@@ -46,4 +48,4 @@ var empresa = JSON.parse( '<?php echo json_encode($empresa); ?>' );
   </div>
 </div>
 
-<?php include'footer.php';?>
+<?php include$path.'/' . 'footer.php';?>

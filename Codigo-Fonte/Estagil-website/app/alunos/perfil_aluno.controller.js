@@ -14,13 +14,8 @@ angular
   vm.selectedOption = vm.options[vm.aluno.semestreAluno-1];
 
   function setSemestre(){
-    console.log("TA ENTRANDO NA FUNCAO");
     vm.aluno.semestreAluno = vm.selectedOption.id;
-  }
-
-
-
-  console.log("semestre aluno: " + vm.aluno.semestreAluno);
+  };
 
   function setEditar (){
     vm.editar = !vm.editar;

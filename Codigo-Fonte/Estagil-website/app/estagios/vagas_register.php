@@ -1,5 +1,5 @@
 <?php
-include ('estagil_model.php');
+include ('../../model/estagil_model.php');
 if(isset($_POST['Sign'])){
 	#$nomeEmpresa = $_POST['form_nome_empresa'];
 	$idEmpresa = $_COOKIE['empresaLogada'];
@@ -13,8 +13,9 @@ if(isset($_POST['Sign'])){
 	$tituloVaga = $_POST['form_titulo_vaga'];
 
 	novaVaga($idEmpresa,$areaVaga,$dataInicio,$descricaoVaga,$salarioVaga,$auxTransporte,$auxExtra,$requisitosVaga,$tituloVaga);
-  header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                         . "index.php");
+
+
+  header ("Location:  http://" . $_SERVER['HTTP_HOST'] . "/app/empresas/feedback_vaga_view.php");
 		exit();
 }
 include ('vagas_register_view.php');
