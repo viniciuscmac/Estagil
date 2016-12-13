@@ -22,13 +22,17 @@ var app = angular.module('EstagilApp')
   }
 
   function inscrever() {
-    id = $scope.id;
-    usuarioLogado= $cookies.get('alunoLogado');
+    $scope.id = idVaga;
+    console.log("id no angular" + $scope.id);
+    $cookies.put('idVaga', $scope.id);
+
+    //id = $scope.id;
+    //usuarioLogado= $cookies.get('alunoLogado');
 
     if (usuarioLogado == ''){
       $http.get('/detalhes.php').then(successCallback, errorCallback);
     }
-    
+
     function successCallback(response) {
       console.log(response);
       $scope.detalhesEstagio = response.data;
