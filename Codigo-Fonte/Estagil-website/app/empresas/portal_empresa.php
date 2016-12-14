@@ -16,6 +16,13 @@ if(isset($_COOKIE['idVagaDeletar'])){
   echo "Vaga Deletada";
 }
 
+if(isset($_COOKIE['idEmpresaDeletar'])){
+  $idEmpresaDeletar = $_COOKIE['idEmpresaDeletar'];
+
+  deleteEmpresa($idEmpresaDeletar);
+  echo "Empresa Deletada";
+}
+
 
 include ('portal_empresa_view.php');
 ?>

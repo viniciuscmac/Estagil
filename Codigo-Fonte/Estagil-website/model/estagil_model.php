@@ -7,6 +7,7 @@ require_once('mysql_connect.php');
 //novoAluno("Joao","62-34567890","Ciencias da Computacao","4","Gyn","20","joao@gmail.com","1234567");
 //updateInfoAluno(2,"Joao","62-34567890","Ciencias da Computacao","4","Gyn","joao@gmail.com","12345");
 //print_r(listVagasEmpresa(6));
+deleteEmpresa(7);
     // ... proceed to declare your function
 
 		function listEmpresas(){
@@ -351,8 +352,10 @@ require_once('mysql_connect.php');
 		global $conn;
 
 		try {
+			$conn->beginTransaction();
 
-			$stmt = $conn->query("DELETE FROM `Estagil`.`Empresas` WHERE `idEmpresas` = ".$id."");
+			$stmt = $conn->prepare("DELETE FROM `Estagil`.`Empresas` JOIN `Estagil`.`acessoEmpresa` AND `Estagil`.`Vagas` ON `Empresas`.`idEmpresas` = ".$id."" );
+			$conn->commit();
 			//$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 		}

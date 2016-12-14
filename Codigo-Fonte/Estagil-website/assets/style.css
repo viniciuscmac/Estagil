@@ -140,10 +140,17 @@ table{background-color: #fff;}
 .portal a:hover {color: rgb(86, 118, 124);}
 .portal-main-view {border-left: 1px solid #ddd}
 
+.btn-deletar-conta {background: #e9440f; color: white;}
+
+
+
 /* Sidebar */
 .nav-sidebar a { color: #333;}
 .nav-sidebar li a:hover { background-color: #656262; color: #fff; text-shadow: 1px 1px 1px black;}
 .sidebar-padding { padding-right: 0px;}
+.nav-sidebar .deletar-conta {margin-top: 200px; background-color: rgb(64, 21, 0); color: white !important;}
+.nav-sidebar .deletar-conta a { color: white;}
+
 
 
 .sortby .result{margin-top: 10px;}

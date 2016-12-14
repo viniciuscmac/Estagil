@@ -6,6 +6,7 @@ angular
     vm.vagas = $window.vagas;
     vm.temVagas = temVagas;
     vm.deletarVaga = deletarVaga;
+    vm.deletarEmpresa = deletarEmpresa;
 
 
     function temVagas(){
@@ -23,6 +24,26 @@ angular
 
         $cookies.remove('idVagaDeletar');
         $window.location.reload();
+      }
+
+      function errorCallback(response){
+        console.log(response);
+      }
+    }
+
+    function deletarEmpresa(){
+      console.log("Entrou na funçao de deletar empresa");
+
+      $cookies.put('idEmpresaDeletar', idVaga);
+      $http.get('portal_empresa.php').then(successCallback, errorCallback);
+
+      function successCallback(response) {
+        console.log(response);
+
+        $cookies.remove('idEmpresaDeletar');
+
+        $cookies.remove('empresaLogada');
+        $window.location.href = "/index.php"
       }
 
       function errorCallback(response){
