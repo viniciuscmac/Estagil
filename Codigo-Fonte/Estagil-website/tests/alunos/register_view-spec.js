@@ -1,5 +1,6 @@
 describe('estagil user register page', function () {
    it('should register a new user and set name in cookies', function () {
+       browser.get('http://localhost:8888/app/alunos/register.php');
        element(by.css('[name="form_nome"]')).sendKeys('Lucas de Assis');
        element(by.css('[name="form_email"]')).sendKeys('lucas@google.com');
        element(by.css('[name="form_telefone"]')).sendKeys('6295433322');

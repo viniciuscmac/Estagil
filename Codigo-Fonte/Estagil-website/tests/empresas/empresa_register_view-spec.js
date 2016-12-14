@@ -1,5 +1,6 @@
 describe('estagil company register page', function () {
     it('should register a new company and set name in cookies', function () {
+        browser.get('http://localhost:8888/app/empresas/empresa_register.php');
         element(by.css('[name="form_nome_empresa"]')).sendKeys('TecVisa');
         element(by.css('[name="form_email_empresa"]')).sendKeys('tecvisa@google.com');
         element(by.css('[name="form_telefone_empresa"]')).sendKeys('1140041233');

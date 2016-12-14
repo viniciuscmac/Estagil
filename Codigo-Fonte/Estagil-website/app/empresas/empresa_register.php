@@ -9,9 +9,10 @@ if(isset($_POST['Sign'])){
     $descricaoEmpresa = $_POST['form_descricao_empresa'];
   $password = $_POST['form_senha_empresa'];
 	novaEmpresa($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$descricaoEmpresa, $email,$password);
-  header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                         . "../../index.php");
-    setcookie('empresaCadastrada', $nome);
+    setcookie('empresaCadastrada', $nomeEmpresa,0,  '/');
+
+    header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
+                         . "../../../index.php");
 
     exit();
   }
