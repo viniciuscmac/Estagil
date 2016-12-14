@@ -50,7 +50,7 @@ require_once('mysql_connect.php');
 		try {
 			$conn->beginTransaction();
 
-			$stmt = $conn->prepare("INSERT INTO `Estagil`.`Alunos` (`idAlunos`, `nomeAluno`, `foneAluno`, `cursoAluno`, `semestreAluno`, `enderecoAluno`, `idadeAluno`) VALUES (NULL, ?, ?, ?, ?, ?, ?)");
+			$stmt = $conn->prepare("INSERT INTO `Estagil`.`Alunos` (`idAlunos`, `nomeAluno`, `foneAluno`, `cursoAluno`, `semestreAluno`, `enderecoAluno`, `dataNascimentoAluno`) VALUES (NULL, ?, ?, ?, ?, ?, ?)");
 			$stmt->execute(array($nomeAluno,$foneAluno,$cursoAluno,$semestreAluno,$enderecoAluno,$idadeAluno));
 			$conn->commit();
 
