@@ -13,7 +13,7 @@ if(isset($_POST['Sign'])){
 	setcookie('estagiarioCadastrado', $nome);
 
   header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                         . "/index.php");
+                         . "../../index.php");
 		exit();
   }
 include ('register_view.php');
