@@ -54,7 +54,7 @@
             <li ng-class="{ active: isActive('/index.php'), hidden: empresaLogada}"><a href="/index.php">Home</a></li>
             <li ng-class="{ active: isActive('/app/empresas/portal_empresa.php'), hidden: !empresaLogada}"><a href="/app/empresas/portal_empresa.php">Início</a></li>
             <li ng-class="{ active: isActive('/app/alunos/portal_aluno.php'), hidden: !alunoLogado}"><a href="/app/alunos/portal_aluno.php">Início</a></li>
-            <li ng-class="{ active: isActive('/app/estagios/estagios.php')}"><a href="/app/estagios/estagios.php">Estágios</a></li>
+            <li ng-class="{ active: isActive('/app/estagios/estagios.php')}"><a name="linkEstagios" href="/app/estagios/estagios.php">Estágios</a></li>
             <li ng-class="{ active: isActive('/app/empresas/empresas.php')}"><a href="/app/empresas/empresas.php">Empresas</a></li>
             <!--<li ng-class="{ active: isActive('/register.php'), hidden: empresaLogada}"><a data-toggle="modal" data-target="#loginpop" style="cursor: pointer;">Entrar</a></li>-->
             <li ng-class="{ active: isActive('/app/login/login.php'), hidden: userLogado}"><a href="/app/login/login.php">Login</a></li>

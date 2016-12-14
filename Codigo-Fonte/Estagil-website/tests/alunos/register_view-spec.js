@@ -13,7 +13,7 @@ describe('estagil user register page', function () {
        element(by.css('[name="form_senha"]')).sendKeys('google');
        element(by.css('[name="form_confirme"]')).sendKeys('google');
 
-       element(by.id('signRegister')).click().then( function () {
+       element(by.css('[name="Sign"]')).click().then( function () {
            browser.manage().getCookie('estagiarioCadastrado').then( function (cookie) {
                expect(cookie.value).toEqual('Lucas de Assis');
            })
