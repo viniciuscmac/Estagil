@@ -1,13 +1,13 @@
 
-<?php 
+<?php
  $path = $_SERVER['DOCUMENT_ROOT'];
-include$path.'/' . 'header.php';?><!-- banner -->
+ include $path.'/'.'header.php';?><!-- banner -->
 
-<script src="estagios.controller.js"></script>
+ <script src="estagios.controller.js"></script>
 
-<script type="text/javascript">
-estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
-</script>
+ <script type="text/javascript">
+ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
+ </script>
 
 <div ng-controller="estagiosCtrl">
 
@@ -32,18 +32,25 @@ estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
               <h5>Salário: {{estagio.salarioVaga | currency:"R$"}}</h5>
             </div>
 
-
-
             <button type="submit" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default"
-            id="detalhe-btn" data-toggle="modal"
-            data-target="#myModal" modal-login-empresa
-            ng-click="getId(estagio.idVaga, estagio.nomeEmpresa)">
-            Detalhes
-          </button>
+              id="detalhe-btn" data-toggle="modal"
+              data-target="#myModal" modal-login-empresa
+              ng-click="getId(estagio.idVaga, estagio.nomeEmpresa)">
+              Detalhes
+            </button>
 
-          <button type="submit" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn">
-            Inscrever
-          </button>
+            <a href= '../login/login.php' ng-class="{hidden: userLogado}">
+              <button type="submit" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn"
+              id="inscrever-btn-login">
+              Inscrever
+            </button></a>
+
+            <a ng-class="{hidden: !userLogado}">
+              <button type="submit" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn"
+              id="inscrever-btn-inscrever" ng-click="inscreverVaga(estagio.idVaga);">
+              Inscrever
+            </button></a>
+
           <div class="clearfix"></div>
           <hr>
 
