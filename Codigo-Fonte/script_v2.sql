@@ -27,15 +27,15 @@ CREATE TABLE `Alunos` (
   `cursoAluno` varchar(45) DEFAULT NULL,
   `semestreAluno` int(11) DEFAULT NULL,
   `enderecoAluno` varchar(45) DEFAULT NULL,
-  `idadeAluno` int(11) DEFAULT NULL
+  `dataNascimentoAluno` varchar(15) DEFAULT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `Alunos`
 --
 
-INSERT INTO `Alunos` (`idAlunos`, `nomeAluno`, `foneAluno`, `cursoAluno`, `semestreAluno`, `enderecoAluno`, `idadeAluno`) VALUES
-(1, 'Moises', '9801 0909', 'Eng. de Software', 6, 'Rua debaixo do viaduto', 21);
+INSERT INTO `Alunos` (`idAlunos`, `nomeAluno`, `foneAluno`, `cursoAluno`, `semestreAluno`, `enderecoAluno`, `dataNascimentoAluno`) VALUES
+(1, 'Moises', '9801 0909', 'Eng. de Software', 6, 'Rua debaixo do viaduto', 21-11-1995);
 
 -- --------------------------------------------------------
 
