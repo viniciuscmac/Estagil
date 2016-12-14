@@ -1,6 +1,7 @@
 <?php 
 $path = $_SERVER['DOCUMENT_ROOT'];
 include$path.'/' . 'header.php';?>
+
 <!-- banner -->
 <div class="inside-banner">
   <div class="container">
@@ -15,7 +16,7 @@ include$path.'/' . 'header.php';?>
     <div class="row register">
       <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
 
-        <form class="" method="post">
+        <form class="" name="registerForm" method="post">
           <input type="text" class="form-control" placeholder="Nome Completo" name="form_nome" required>
           <input type="email" class="form-control" placeholder="Email" name="form_email" required>
           <input type="text" class="form-control" placeholder="Telefone" name="form_telefone" required>
@@ -48,7 +49,9 @@ include$path.'/' . 'header.php';?>
           <input type="password" class="form-control" placeholder="Senha" name="form_senha" required>
           <input type="password" class="form-control" placeholder="Confirme sua senha" name="form_confirme" required>
 
-          <button type="submit" class="btn btn-success" name="Sign">Criar conta</button>
+          <button id="signRegister" type="submit" class="btn btn-success" name="Sign">Criar conta</button>
+
+
         </form>
 
 
