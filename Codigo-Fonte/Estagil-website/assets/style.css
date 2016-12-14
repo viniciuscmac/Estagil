@@ -46,6 +46,8 @@ table{background-color: #fff;}
 .btn-detalhe{float: right; margin-top:10px;}
 .btn-inscrever{float: right; background: #82d110; margin-top:10px;}
 .btn-cancelar{float: right; background: #e90f22; margin-top:10px;}
+.btn-deletar{float: right; background: #e9440f; margin-top:10px; color: white;}
+.btn-criar-nova{background: #72b70f; color: white;}
 
 .thumbnail{ background-color:#fff;}
 
