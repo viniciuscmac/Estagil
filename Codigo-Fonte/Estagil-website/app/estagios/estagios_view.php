@@ -9,7 +9,7 @@
  estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
  </script>
 
-<div ng-controller="estagiosCtrl">
+<div ng-controller="EstagiosController as estagiosCtrl">
 
   <div class="inside-banner">
     <div class="container">
@@ -25,7 +25,7 @@
       <div class="row"  >
         <div class="col-lg-6  col-lg-offset-3  col-md-6 col-md-offset-3 col-sm-9 col-xs-10 col-xs-offset-1">
           <!-- agents -->
-          <div class="row" ng-repeat="estagio in estagios">
+          <div class="row" ng-repeat="estagio in estagiosCtrl.estagios">
 
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7"><h3>{{estagio.tituloVaga}}</h3>
               <h5>Empresa: {{estagio.nomeEmpresa}}</h5>
@@ -35,7 +35,7 @@
             <button type="submit" class="btn-detalhe col-lg-3 col-md-3 col-sm-3 col-xs-4 btn btn-default"
               id="detalhe-btn" data-toggle="modal"
               data-target="#myModal" modal-login-empresa
-              ng-click="getId(estagio.idVaga, estagio.nomeEmpresa)">
+              ng-click="estagiosCtrl.getId(estagio.idVaga, estagio.nomeEmpresa)">
               Detalhes
             </button>
 
@@ -47,7 +47,7 @@
 
             <a ng-class="{hidden: !userLogado}">
               <button type="submit" class="btn-inscrever col-lg-3 col-md-3 col-sm-3 col-xs-4 btn"
-              id="inscrever-btn-inscrever" ng-click="inscreverVaga(estagio.idVaga);">
+              id="inscrever-btn-inscrever" ng-click="estagiosCtrl.inscreverVaga(estagio.idVaga);">
               Inscrever
             </button></a>
 
@@ -73,7 +73,7 @@ class="modal-dialog" role="document" >
       <span aria-hidden="true">&times;</span>
     </button>
 
-    <h4 class="modal-title" id="myModalLabel">{{detalhesEstagio.tituloVaga}}</h4> <!-- ANGULAR NAO FUNCIONA DAQUI PRA BAIXO-->
+    <h4 class="modal-title" id="myModalLabel">{{estagiosCtrl.detalhesEstagio.tituloVaga}}</h4> <!-- ANGULAR NAO FUNCIONA DAQUI PRA BAIXO-->
   </div>
 
   <div class="modal-body">
@@ -83,21 +83,21 @@ class="modal-dialog" role="document" >
           <h2></h2>
           <h4>Descrição da vaga</h4>
 
-          <p>{{detalhesEstagio.descricaoVaga}}</p>
+          <p>{{estagiosCtrl.detalhesEstagio.descricaoVaga}}</p>
           <h4>Empresa</h4>
-          <p>{{detalhesEstagio.nomeEmpresa}}</p>
+          <p>{{estagiosCtrl.detalhesEstagio.nomeEmpresa}}</p>
           <h4>Requisitos</h4>
-          <p>{{detalhesEstagio.requisitosVaga}}</p>
+          <p>{{estagiosCtrl.detalhesEstagio.requisitosVaga}}</p>
           <h4>Data de início</h4>
-          <p>{{detalhesEstagio.dataInicio | date:'dd/MM/yyyy'}}</p>
+          <p>{{estagiosCtrl.detalhesEstagio.dataInicio | date:'dd/MM/yyyy'}}</p>
           <h4>Auxílio Transporte</h4>
-          <p> {{detalhesEstagio.auxilioTransporte == 0 ? "Não" : "Sim"}}</p>
+          <p> {{estagiosCtrl.detalhesEstagio.auxilioTransporte == 0 ? "Não" : "Sim"}}</p>
           <h4>Auxílio Extra</h4>
-          <p>{{detalhesEstagio.auxilioExtra == 0 ? "Não" : "Sim"}}</p>
+          <p>{{estagiosCtrl.detalhesEstagio.auxilioExtra == 0 ? "Não" : "Sim"}}</p>
           <!--<p>{{estagio.enderecoEmpresa}}</p>-->
           <div class="detalhe-vaga">
             <h4>Salário</h4>
-            <p class="price"> {{detalhesEstagio.salarioVaga | currency:"R$"}}</p>
+            <p class="price"> {{estagiosCtrl.detalhesEstagio.salarioVaga | currency:"R$"}}</p>
 
 
           </div>

@@ -82,7 +82,9 @@ vagas = JSON.parse( '<?php echo json_encode($vagas); ?>' );
         <h4 class="modal-title" id="myModalLabel">Deletar Vaga</h4>
       </div>
       <div class="modal-body">
+
         <h4>Você tem certeza que deseja deletar sua empresa do sistema?</h4>
+        <h5 style="color: red">Atenção! Você poderá deletar vagas e inscrições realizando essa operação.</h5>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary btn-deletar-conta" data-dismiss="modal" ng-click="portalCtrl.deletarEmpresa(portalCtrl.empresa.idEmpresa)">Sim</button>

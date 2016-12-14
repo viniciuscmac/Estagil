@@ -1,18 +1,21 @@
 var app = angular.module('EstagilApp')
-.controller("estagiosCtrl", function($scope, $window, $cookies, $http) {
-  $scope.estagios = $window.estagios;
+.controller("EstagiosController", function($scope, $window, $cookies, $http) {
+  var vm = this;
+  vm.estagios = $window.estagios;
+  vm.getId = getId;
+  vm.inscreverVaga = inscreverVaga;
 
-  $scope.getId = function(idVaga, nomeEmpresa) {
-    $scope.id = idVaga;
-    console.log("id no angular" + $scope.id);
-    $cookies.put('idVaga', $scope.id);
+  function getId(idVaga, nomeEmpresa) {
+    vm.id = idVaga;
+    console.log("id no angular" + vm.id);
+    $cookies.put('idVaga', vm.id);
     $http.get('detalhes.php').then(successCallback, errorCallback);
 
     function successCallback(response) {
       console.log(response);
-      $scope.detalhesEstagio = response.data;
-      $scope.detalhesEstagio.nomeEmpresa = nomeEmpresa;
-      $scope.detalhesEstagio.dataInicio = new Date($scope.detalhesEstagio.dataInicio);
+      vm.detalhesEstagio = response.data;
+      vm.detalhesEstagio.nomeEmpresa = nomeEmpresa;
+      vm.detalhesEstagio.dataInicio = new Date(vm.detalhesEstagio.dataInicio);
       $cookies.remove('idVaga');
     }
 
@@ -21,7 +24,7 @@ var app = angular.module('EstagilApp')
     }
   }
 
-  $scope.inscreverVaga = function(idVaga){
+  function inscreverVaga(idVaga){
     $cookies.put('idVagaInscricao', idVaga);
     $http.get('estagios.php').then(successCallback, errorCallback);
 
