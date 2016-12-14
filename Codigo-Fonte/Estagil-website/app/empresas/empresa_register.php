@@ -10,8 +10,10 @@ if(isset($_POST['Sign'])){
   $password = $_POST['form_senha_empresa'];
 	novaEmpresa($nomeEmpresa,$foneEmpresa,$areaEmpresa,$enderecoEmpresa,$descricaoEmpresa, $email,$password);
   header ("Location:  http://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF'])
-                         . "/index.php");
-		exit();
+                         . "../../index.php");
+    setcookie('empresaCadastrada', $nome);
+
+    exit();
   }
 include ('empresa_register_view.php');
 ?>
