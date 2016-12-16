@@ -1,9 +1,8 @@
-<?php 
+<?php
  $path = $_SERVER['DOCUMENT_ROOT'];
 include$path.'/' . 'header.php';?>
 
 <script src="perfil_empresa.controller.js"></script>
-
 
 <script type="text/javascript">
 var empresa = JSON.parse( '<?php echo json_encode($empresa); ?>' );
@@ -18,12 +17,10 @@ var empresa = JSON.parse( '<?php echo json_encode($empresa); ?>' );
 <!-- banner -->
 
 <div ng-controller="PerfilEmpresaController as perfilCtrl">
-
   <div class="container">
     <div class="spacer">
       <div class="row register">
         <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
-
           <form class="" action="" method="post">
             <input type="text" class="form-control" placeholder="Nome da Empresa" name="form_nome_empresa" ng-model="perfilCtrl.empresa.nomeEmpresa" ng-disabled="!perfilCtrl.editar" required>
             <input type="email" class="form-control" placeholder="Email" name="form_email_empresa" ng-model="perfilCtrl.empresa.emailEmpresa"  ng-disabled="!perfilCtrl.editar" required>
@@ -38,10 +35,7 @@ var empresa = JSON.parse( '<?php echo json_encode($empresa); ?>' );
             <button type="button" class="btn btn-default" name="Edit" ng-show="!perfilCtrl.editar" ng-click="perfilCtrl.setEditar()">Editar</button>
             <button ng-show="perfilCtrl.editar" type="button" class="btn btn-default" name="Cancel"  ng-click="perfilCtrl.setEditar()">Cancelar</button>
             <br><button type="submit" class="btn btn-success" name="Save" ng-show="perfilCtrl.editar">Salvar</button>
-
           </form>
-
-
         </div>
       </div>
     </div>

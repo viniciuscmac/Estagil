@@ -14,7 +14,6 @@ if(isset($_POST['Sign'])){
 
 	novaVaga($idEmpresa,$areaVaga,$dataInicio,$descricaoVaga,$salarioVaga,$auxTransporte,$auxExtra,$requisitosVaga,$tituloVaga);
 
-
   header ("Location:  http://" . $_SERVER['HTTP_HOST'] . "/app/empresas/feedback_vaga_view.php");
 		exit();
 }

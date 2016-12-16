@@ -9,7 +9,7 @@
  estagios = JSON.parse( '<?php echo json_encode($estagios); ?>' );
  </script>
 
-<div ng-controller="EstagiosController as estagiosCtrl">
+ <div ng-controller="EstagiosController as estagiosCtrl">
 
   <div class="inside-banner">
     <div class="container">
@@ -21,12 +21,10 @@
 
   <div class="container">
     <div class="spacer agents">
-
       <div class="row"  >
         <div class="col-lg-6  col-lg-offset-3  col-md-6 col-md-offset-3 col-sm-9 col-xs-10 col-xs-offset-1">
           <!-- agents -->
           <div class="row" ng-repeat="estagio in estagiosCtrl.estagios">
-
             <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7"><h3>{{estagio.tituloVaga}}</h3>
               <h5>Empresa: {{estagio.nomeEmpresa}}</h5>
               <h5>Salário: {{estagio.salarioVaga | currency:"R$"}}</h5>
@@ -50,14 +48,11 @@
               id="inscrever-btn-inscrever" ng-click="estagiosCtrl.inscreverVaga(estagio.idVaga);">
               Inscrever
             </button></a>
-
           <div class="clearfix"></div>
           <hr>
-
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -72,7 +67,6 @@ class="modal-dialog" role="document" >
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-
     <h4 class="modal-title" id="myModalLabel">{{estagiosCtrl.detalhesEstagio.tituloVaga}}</h4> <!-- ANGULAR NAO FUNCIONA DAQUI PRA BAIXO-->
   </div>
 
@@ -98,23 +92,18 @@ class="modal-dialog" role="document" >
           <div class="detalhe-vaga">
             <h4>Salário</h4>
             <p class="price"> {{estagiosCtrl.detalhesEstagio.salarioVaga | currency:"R$"}}</p>
-
-
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
   </div>
 </div>
 </div>
 </div>
-
 <!-- Fim do modal -->
 </div>
-
 
 <?php include$path.'/' . 'footer.php';?>

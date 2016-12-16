@@ -8,7 +8,6 @@ if(isset($_COOKIE['empresaLogada'])){
   $vagas = listVagasEmpresa($idEmpresa);
 }
 
-
 if(isset($_COOKIE['idVagaDeletar'])){
   $idVagaDeletar = $_COOKIE['idVagaDeletar'];
 
@@ -22,7 +21,6 @@ if(isset($_COOKIE['idEmpresaDeletar'])){
   deleteEmpresa($idEmpresaDeletar);
   echo "Empresa Deletada";
 }
-
 
 include ('portal_empresa_view.php');
 ?>

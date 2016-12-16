@@ -22,7 +22,5 @@ if(isset($_POST['Save'])){
   exit();
 }
 
-
-
 include ('perfil_empresa_view.php');
 ?>

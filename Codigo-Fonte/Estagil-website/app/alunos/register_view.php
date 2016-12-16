@@ -1,4 +1,4 @@
-<?php 
+<?php
 $path = $_SERVER['DOCUMENT_ROOT'];
 include$path.'/' . 'header.php';?>
 
@@ -51,9 +51,7 @@ include$path.'/' . 'header.php';?>
 
           <button id="signRegister" type="submit" class="btn btn-success" name="Sign">Criar conta</button>
 
-
         </form>
-
 
       </div>
     </div>

@@ -18,24 +18,20 @@ vagas = JSON.parse( '<?php echo json_encode($vagas); ?>' );
         <ul class="nav">
           <li ><a href="perfil_empresa.php">Editar perfil</a></li>
           <li ><a href="/app/estagios/vagas_register.php">Cadastrar Nova Vaga</a></li>
-
           <li class="deletar-conta" data-toggle="modal" data-target="#myModal"><a href="#">Deletar minha empresa</a></li>
             <li class="nav-divider"></li>
           </ul>
         </nav>
       </div>
 
-
       <div class="container portal" ng-controller="PortalEmpresaController as portalCtrl">
         <div class="col-lg-9 col-sm-9 portal-main-view">
           <div class="spacer-portal">
             <div class="col-lg-offset-1">
               <h2>Vagas Cadastradas</h2>
-
               <div ng-show="portalCtrl.temVagas()">
                 <!-- agents -->
                 <div class="row" ng-repeat="vaga in portalCtrl.vagas">
-
                   <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7"><h3>Nome da vaga: {{vaga.tituloVaga}}</h3>
                     <h5>Salário: {{vaga.salarioVaga | currency:"R$"}}</h5>
                   </div>
@@ -54,7 +50,6 @@ vagas = JSON.parse( '<?php echo json_encode($vagas); ?>' );
               </div>
             </div> <!-- temvagas() -->
 
-
             <div ng-show="!portalCtrl.temVagas()" class="spacer-feedback">
               <h4>Sua empresa ainda não possui vagas cadastradas!</h4><br>
               <button class="btn-criar-nova btn btn-default" onclick="location.href='/app/estagios/vagas_register.php';"
@@ -62,14 +57,11 @@ vagas = JSON.parse( '<?php echo json_encode($vagas); ?>' );
               Criar nova vaga
             </button>
           </div>
-
         </div>
       </div> <!-- spacer-portal -->
     </div>
   </div> <!-- container portal -->
 </div>
-
-
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -82,7 +74,6 @@ vagas = JSON.parse( '<?php echo json_encode($vagas); ?>' );
         <h4 class="modal-title" id="myModalLabel">Deletar Vaga</h4>
       </div>
       <div class="modal-body">
-
         <h4>Você tem certeza que deseja deletar sua empresa do sistema?</h4>
         <h5 style="color: red">Atenção! Você poderá deletar vagas e inscrições realizando essa operação.</h5>
       </div>

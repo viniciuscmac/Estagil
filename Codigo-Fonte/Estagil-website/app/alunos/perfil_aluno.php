@@ -4,11 +4,9 @@ include ('../../model/estagil_model.php');
 if(isset($_COOKIE['alunoLogado'])){
   $idAluno = $_COOKIE['alunoLogado'];
   $aluno = infoAluno($idAluno)[0];
-
 }
 
 if(isset($_POST['Save'])){
-
 	$nomeAluno = $_POST['form_nome'];
 	$email = $_POST['form_email'];
 	$foneAluno = $_POST['form_telefone'];
@@ -23,8 +21,6 @@ if(isset($_POST['Save'])){
   . "/perfil_aluno.php");
 		exit();
   }
-
-
 
 include ('perfil_aluno_view.php');
 ?>

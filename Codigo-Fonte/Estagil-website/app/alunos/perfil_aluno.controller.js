@@ -20,5 +20,4 @@ angular
   function setEditar (){
     vm.editar = !vm.editar;
   };
-
 });

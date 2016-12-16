@@ -4,7 +4,6 @@ include$path.'/' . 'header.php';?>
 
 <script src="perfil_aluno.controller.js"></script>
 
-
 <script type="text/javascript">
 var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
 </script>
@@ -18,7 +17,6 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
 <!-- banner -->
 
 <div ng-controller="PerfilAlunoController as perfilCtrl">
-
   <div class="container">
     <div class="spacer">
       <div class="row register">
@@ -45,14 +43,10 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
               <br><button type="submit" class="btn btn-success" name="Save" ng-show="perfilCtrl.editar">Salvar</button>
             </div>
           </form>
-
-
         </div>
       </div>
     </div>
   </div>
-
 </div>
-
 
 <?php include$path.'/' . 'footer.php';?>

@@ -3,7 +3,6 @@
 $path = $_SERVER['DOCUMENT_ROOT'];
 include$path.'/' . 'header.php';?>
 
-
 <script src="portal_aluno.controller.js"></script>
 
 <script type="text/javascript">
@@ -11,7 +10,6 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
 </script>
 
 <div ng-controller="PortalAlunoController">
-
   <div class="row">
 
     <div class="col-sm-2 sidebar-padding">
@@ -23,7 +21,6 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
         </ul>
       </nav>
     </div>
-
 
     <div class="container portal">
       <div class="col-lg-9 col-sm-9 portal-main-view">
@@ -57,8 +54,6 @@ var aluno = JSON.parse( '<?php echo json_encode($aluno); ?>' );
     </div>
   </div> <!-- container portal -->
 </div>
-
-
 
 </div>
 

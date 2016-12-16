@@ -2,7 +2,6 @@
 
   <!-- modal de login empresa -->
     <div ng-controller="LoginEmpresaController as loginEmpresaCtrl" id="loginempresapop" >
-
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="row">
@@ -27,8 +26,6 @@
                 </div>
                 <br><br><a href="#">Esqueci minha senha</a>
                 <button type="submit" class="btn btn-success" name="loginempresa" ng-click="loginEmpresaCtrl.doLogin()">Entrar</button>
-
-
               </form>
             </div>
           </div>
@@ -36,8 +33,3 @@
       </div>
     </div>
     <!-- /.modal -->
-
-
-
-
-

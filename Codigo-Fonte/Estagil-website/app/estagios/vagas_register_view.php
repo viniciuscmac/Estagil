@@ -8,14 +8,11 @@ include$path.'/' . 'header.php';?><!-- banner -->
 </div>
 <!-- banner -->
 
-
 <div class="container">
   <div class="spacer">
     <div class="row register">
       <div class="col-lg-6 col-lg-offset-3 col-sm-6 col-sm-offset-3 col-xs-12 ">
-
         <form class="" action="" method="post">
-
           <input type="text" class="form-control" placeholder="Forneça o título da vaga" name="form_titulo_vaga" required>
           <input type="text" class="form-control" placeholder="Forneça a área de atuação da vaga" name="form_area_vaga" required>
           <input type="textarea" class="form-control" rows="15" placeholder="Forneça uma descrição da vaga" name="form_descricao_vaga" required></textarea>
@@ -40,8 +37,6 @@ include$path.'/' . 'header.php';?><!-- banner -->
 
           <button type="submit" class="btn btn-success" name="Sign">Abrir Vaga</button>
         </form>
-
-
       </div>
     </div>
   </div>

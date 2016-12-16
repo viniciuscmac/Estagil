@@ -8,7 +8,6 @@ angular
     vm.deletarVaga = deletarVaga;
     vm.deletarEmpresa = deletarEmpresa;
 
-
     function temVagas(){
       return vm.vagas.length > 0 ;
     }
